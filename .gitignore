@@ -1,0 +1,8 @@
+node_modules
+.next
+.env
+.env.local
+.claude
+cybersec fall 25 gbms - Sheet1.csv
+.DS_Store
+

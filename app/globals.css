@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: auto !important;
+  }
+  
+  body {
+    background-color: #0a0e14;
+    color: #00ff00;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03),
+        rgba(0, 255, 0, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+  }
+  
+  /* Make inputs more visible */
+  input {
+    caret-color: #00ff00;
+  }
+  
+  input::selection {
+    background-color: #00ff00;
+    color: #0a0e14;
+  }
+}
+
+@layer utilities {
+  .terminal-glow {
+    filter: drop-shadow(0 0 10px currentColor);
+  }
+  
+  .scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 255, 0, 0.2), transparent);
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  @keyframes scanline {
+    0% {
+      top: -10px;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  .crt-effect {
+    animation: crt-flicker 0.15s infinite;
+  }
+  
+  @keyframes crt-flicker {
+    0% {
+      opacity: 0.27861;
+    }
+    5% {
+      opacity: 0.34769;
+    }
+    10% {
+      opacity: 0.23604;
+    }
+    15% {
+      opacity: 0.90626;
+    }
+    20% {
+      opacity: 0.18128;
+    }
+    25% {
+      opacity: 0.83891;
+    }
+    30% {
+      opacity: 0.65583;
+    }
+    35% {
+      opacity: 0.67807;
+    }
+    40% {
+      opacity: 0.26559;
+    }
+    45% {
+      opacity: 0.84693;
+    }
+    50% {
+      opacity: 0.96019;
+    }
+    55% {
+      opacity: 0.08594;
+    }
+    60% {
+      opacity: 0.20313;
+    }
+    65% {
+      opacity: 0.71988;
+    }
+    70% {
+      opacity: 0.53455;
+    }
+    75% {
+      opacity: 0.37288;
+    }
+    80% {
+      opacity: 0.71428;
+    }
+    85% {
+      opacity: 0.70419;
+    }
+    90% {
+      opacity: 0.7003;
+    }
+    95% {
+      opacity: 0.36108;
+    }
+    100% {
+      opacity: 0.24387;
+    }
+  }
+  
+  .matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    z-index: -1;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes borderRotate {
+    0% {
+      border-image-source: linear-gradient(0deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+    }
+    100% {
+      border-image-source: linear-gradient(360deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+    }
+  }
+}
