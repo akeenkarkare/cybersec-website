@@ -1,97 +1,126 @@
 import GlitchText from '@/components/GlitchText'
+import GlowCard from '@/components/GlowCard'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Resources() {
   return (
     <div className="space-y-8 max-w-5xl mx-auto">
-      <h1 className="text-4xl md:text-5xl font-bold text-terminal-cyan mb-8">
-        <GlitchText text="[RESOURCES]" />
+      <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center relative">
+        <span className="absolute inset-0 blur-3xl" style={{
+          background: 'linear-gradient(90deg, #00ff00, #00ffff)',
+          opacity: 0.4
+        }}></span>
+        <span className="relative">
+          <GlitchText text="[RESOURCES]" />
+        </span>
       </h1>
 
-      <section className="bg-black/60 backdrop-blur-sm border border-terminal-green/30 rounded-lg p-8 md:p-10">
-        <h2 className="text-2xl font-bold text-terminal-yellow mb-4">LEARNING PATHS</h2>
-        
-        <div className="space-y-6">
-          <div className="border-l-4 border-terminal-green pl-4">
-            <h3 className="text-xl font-bold text-terminal-cyan mb-2">🌱 BEGINNER PATH</h3>
-            <ul className="space-y-2 text-terminal-green/90">
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">linux basics</a> - learn what sudo rm -rf / does (don't)</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">networking</a> - packets go brrrr</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">python</a> - print("i'm in")</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">overthewire</a> - where everyone starts</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">picoCTF</a> - CTF with training wheels</li>
-            </ul>
-          </div>
+      <ScrollReveal delay={100}>
+        <GlowCard glowColor="0, 255, 0">
+          <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>LEARNING PATHS</h2>
+          
+          <div className="space-y-6">
+            <div className="border-l-4 transition-all hover:translate-x-2" style={{ borderColor: '#00ff00', paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#00ffff' }}>🌱 BEGINNER PATH</h3>
+              <ul className="space-y-2" style={{ color: 'rgba(0, 255, 0, 0.9)' }}>
+                <li>• linux basics - learn what sudo rm -rf / does (don't)</li>
+                <li>• networking - packets go brrrr</li>
+                <li>• python - print("i'm in")</li>
+                <li>• overthewire - where everyone starts</li>
+                <li>• picoCTF - CTF with training wheels</li>
+              </ul>
+            </div>
 
-          <div className="border-l-4 border-terminal-yellow pl-4">
-            <h3 className="text-xl font-bold text-terminal-cyan mb-2">⚡ INTERMEDIATE PATH</h3>
-            <ul className="space-y-2 text-terminal-green/90">
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">web hacking</a> - SQL injection go brrr</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">pwn</a> - segfault is your new bestie</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">crypto</a> - it's just math bro (pain)</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">hackthebox</a> - prepare to cry</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">tryhackme</a> - HTB's friendly cousin</li>
-            </ul>
-          </div>
+            <div className="border-l-4 transition-all hover:translate-x-2" style={{ borderColor: '#ffff00', paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#00ffff' }}>⚡ INTERMEDIATE PATH</h3>
+              <ul className="space-y-2" style={{ color: 'rgba(0, 255, 0, 0.9)' }}>
+                <li>• web hacking - SQL injection go brrr</li>
+                <li>• pwn - segfault is your new bestie</li>
+                <li>• crypto - it's just math bro (pain)</li>
+                <li>• hackthebox - prepare to cry</li>
+                <li>• tryhackme - HTB's friendly cousin</li>
+              </ul>
+            </div>
 
-          <div className="border-l-4 border-terminal-red pl-4">
-            <h3 className="text-xl font-bold text-terminal-cyan mb-2">🔥 ADVANCED PATH</h3>
-            <ul className="space-y-2 text-terminal-green/90">
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">kernel pwn</a> - when userland is too easy</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">mobile</a> - hack the thing in your pocket</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">cloud</a> - someone else's computer</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">malware</a> - spicy software analysis</li>
-              <li>• <a href="#" className="hover:text-terminal-cyan transition-colors">bug bounties</a> - hack legally, get paid</li>
-            </ul>
+            <div className="border-l-4 transition-all hover:translate-x-2" style={{ borderColor: '#ff0000', paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#00ffff' }}>🔥 ADVANCED PATH</h3>
+              <ul className="space-y-2" style={{ color: 'rgba(0, 255, 0, 0.9)' }}>
+                <li>• kernel pwn - when userland is too easy</li>
+                <li>• mobile - hack the thing in your pocket</li>
+                <li>• cloud - someone else's computer</li>
+                <li>• malware - spicy software analysis</li>
+                <li>• bug bounties - hack legally, get paid</li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </GlowCard>
+      </ScrollReveal>
 
-      <section className="bg-black/60 backdrop-blur-sm border border-terminal-green/30 rounded-lg p-8 md:p-10">
-        <h2 className="text-2xl font-bold text-terminal-yellow mb-4">PRACTICE PLATFORMS</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="border border-terminal-green/30 rounded p-6 hover:bg-black/40 transition-colors">
-            <h3 className="text-terminal-cyan font-bold mb-2">CTF Platforms</h3>
-            <ul className="text-terminal-green/80 text-sm space-y-1">
-              <li>• CTFtime.org - Global CTF calendar</li>
-              <li>• PicoCTF - Beginner challenges</li>
-              <li>• RingZer0 - Various challenge types</li>
-              <li>• Root-Me - Progressive challenges</li>
-            </ul>
+      <ScrollReveal delay={150}>
+        <GlowCard glowColor="0, 255, 255">
+          <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>PRACTICE PLATFORMS</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="border rounded transition-all hover:brightness-110 hover:translate-y-[-2px]" style={{
+              padding: '1.5rem',
+              borderColor: 'rgba(0, 255, 0, 0.3)',
+              background: 'rgba(0, 0, 0, 0.4)'
+            }}>
+              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>CTF Platforms</h3>
+              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
+                <li>• CTFtime.org - Global CTF calendar</li>
+                <li>• PicoCTF - Beginner challenges</li>
+                <li>• RingZer0 - Various challenge types</li>
+                <li>• Root-Me - Progressive challenges</li>
+              </ul>
+            </div>
+            <div className="border rounded transition-all hover:brightness-110 hover:translate-y-[-2px]" style={{
+              padding: '1.5rem',
+              borderColor: 'rgba(0, 255, 0, 0.3)',
+              background: 'rgba(0, 0, 0, 0.4)'
+            }}>
+              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>Vulnerable Apps</h3>
+              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
+                <li>• DVWA - Damn Vulnerable Web App</li>
+                <li>• WebGoat - OWASP training</li>
+                <li>• Metasploitable - Vulnerable Linux</li>
+                <li>• VulnHub - Boot2root VMs</li>
+              </ul>
+            </div>
+            <div className="border rounded transition-all hover:brightness-110 hover:translate-y-[-2px]" style={{
+              padding: '1.5rem',
+              borderColor: 'rgba(0, 255, 0, 0.3)',
+              background: 'rgba(0, 0, 0, 0.4)'
+            }}>
+              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>Online Labs</h3>
+              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
+                <li>• HackTheBox Academy</li>
+                <li>• PentesterLab</li>
+                <li>• Cybrary</li>
+                <li>• SANS Cyber Aces</li>
+              </ul>
+            </div>
+            <div className="border rounded transition-all hover:brightness-110 hover:translate-y-[-2px]" style={{
+              padding: '1.5rem',
+              borderColor: 'rgba(0, 255, 0, 0.3)',
+              background: 'rgba(0, 0, 0, 0.4)'
+            }}>
+              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>Coding Challenges</h3>
+              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
+                <li>• Cryptopals - Crypto challenges</li>
+                <li>• Exploit Education - Binary exploitation</li>
+                <li>• W3Challs - Various security challenges</li>
+                <li>• SmashTheStack - Wargaming</li>
+              </ul>
+            </div>
           </div>
-          <div className="border border-terminal-green/30 rounded p-6 hover:bg-black/40 transition-colors">
-            <h3 className="text-terminal-cyan font-bold mb-2">Vulnerable Apps</h3>
-            <ul className="text-terminal-green/80 text-sm space-y-1">
-              <li>• DVWA - Damn Vulnerable Web App</li>
-              <li>• WebGoat - OWASP training</li>
-              <li>• Metasploitable - Vulnerable Linux</li>
-              <li>• VulnHub - Boot2root VMs</li>
-            </ul>
-          </div>
-          <div className="border border-terminal-green/30 rounded p-6 hover:bg-black/40 transition-colors">
-            <h3 className="text-terminal-cyan font-bold mb-2">Online Labs</h3>
-            <ul className="text-terminal-green/80 text-sm space-y-1">
-              <li>• HackTheBox Academy</li>
-              <li>• PentesterLab</li>
-              <li>• Cybrary</li>
-              <li>• SANS Cyber Aces</li>
-            </ul>
-          </div>
-          <div className="border border-terminal-green/30 rounded p-6 hover:bg-black/40 transition-colors">
-            <h3 className="text-terminal-cyan font-bold mb-2">Coding Challenges</h3>
-            <ul className="text-terminal-green/80 text-sm space-y-1">
-              <li>• Cryptopals - Crypto challenges</li>
-              <li>• Exploit Education - Binary exploitation</li>
-              <li>• W3Challs - Various security challenges</li>
-              <li>• SmashTheStack - Wargaming</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </GlowCard>
+      </ScrollReveal>
 
-      <section className="bg-black/60 backdrop-blur-sm border border-terminal-green/30 rounded-lg p-8 md:p-10">
-        <h2 className="text-2xl font-bold text-terminal-yellow mb-4">ESSENTIAL TOOLS</h2>
-        <div className="font-mono text-sm">
-          <pre className="text-terminal-green overflow-x-auto">
+      <ScrollReveal delay={200}>
+        <GlowCard glowColor="255, 255, 0">
+          <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>ESSENTIAL TOOLS</h2>
+          <div className="font-mono text-sm overflow-x-auto">
+            <pre style={{ color: '#00ff00' }}>
 {`┌─────────────────┬──────────────────────────────────┐
 │ Tool            │ Description                      │
 ├─────────────────┼──────────────────────────────────┤
@@ -106,61 +135,66 @@ export default function Resources() {
 │ SQLMap          │ SQL injection automation         │
 │ Gobuster        │ Directory/file enumeration       │
 └─────────────────┴──────────────────────────────────┘`}
-          </pre>
-        </div>
-      </section>
+            </pre>
+          </div>
+        </GlowCard>
+      </ScrollReveal>
 
-      <section className="bg-black/60 backdrop-blur-sm border border-terminal-green/30 rounded-lg p-8 md:p-10">
-        <h2 className="text-2xl font-bold text-terminal-yellow mb-4">RECOMMENDED BOOKS</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <h3 className="text-terminal-cyan font-bold">Technical Books</h3>
-            <ul className="text-terminal-green/80 text-sm space-y-1">
-              <li>📚 The Web Application Hacker's Handbook</li>
-              <li>📚 Hacking: The Art of Exploitation</li>
-              <li>📚 The Shellcoder's Handbook</li>
-              <li>📚 Practical Malware Analysis</li>
-              <li>📚 Applied Cryptography</li>
-            </ul>
+      <ScrollReveal delay={250}>
+        <GlowCard glowColor="255, 0, 255">
+          <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>RECOMMENDED BOOKS</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <h3 className="font-bold" style={{ color: '#00ffff' }}>Technical Books</h3>
+              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
+                <li>📚 The Web Application Hacker's Handbook</li>
+                <li>📚 Hacking: The Art of Exploitation</li>
+                <li>📚 The Shellcoder's Handbook</li>
+                <li>📚 Practical Malware Analysis</li>
+                <li>📚 Applied Cryptography</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold" style={{ color: '#00ffff' }}>Theory & Concepts</h3>
+              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
+                <li>📚 Computer Security: Art and Science</li>
+                <li>📚 Security Engineering by Ross Anderson</li>
+                <li>📚 The Tangled Web</li>
+                <li>📚 Silence on the Wire</li>
+                <li>📚 Cult of the Dead Cow</li>
+              </ul>
+            </div>
           </div>
-          <div className="space-y-2">
-            <h3 className="text-terminal-cyan font-bold">Theory & Concepts</h3>
-            <ul className="text-terminal-green/80 text-sm space-y-1">
-              <li>📚 Computer Security: Art and Science</li>
-              <li>📚 Security Engineering by Ross Anderson</li>
-              <li>📚 The Tangled Web</li>
-              <li>📚 Silence on the Wire</li>
-              <li>📚 Cult of the Dead Cow</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </GlowCard>
+      </ScrollReveal>
 
-      <section className="bg-black/60 backdrop-blur-sm border border-terminal-green/30 rounded-lg p-8 md:p-10">
-        <h2 className="text-2xl font-bold text-terminal-yellow mb-4">CERTIFICATIONS</h2>
-        <div className="space-y-3 text-terminal-green/90">
-          <div className="flex justify-between items-center border-b border-terminal-green/20 pb-2">
-            <span className="font-bold">CompTIA Security+</span>
-            <span className="text-terminal-cyan text-sm">Entry Level</span>
+      <ScrollReveal delay={300}>
+        <GlowCard glowColor="0, 255, 0">
+          <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>CERTIFICATIONS</h2>
+          <div className="space-y-3" style={{ color: 'rgba(0, 255, 0, 0.9)' }}>
+            <div className="flex justify-between items-center pb-2" style={{ borderBottom: '1px solid rgba(0, 255, 0, 0.2)' }}>
+              <span className="font-bold">CompTIA Security+</span>
+              <span className="text-sm" style={{ color: '#00ffff' }}>Entry Level</span>
+            </div>
+            <div className="flex justify-between items-center pb-2" style={{ borderBottom: '1px solid rgba(0, 255, 0, 0.2)' }}>
+              <span className="font-bold">CompTIA PenTest+</span>
+              <span className="text-sm" style={{ color: '#00ffff' }}>Intermediate</span>
+            </div>
+            <div className="flex justify-between items-center pb-2" style={{ borderBottom: '1px solid rgba(0, 255, 0, 0.2)' }}>
+              <span className="font-bold">CEH (Certified Ethical Hacker)</span>
+              <span className="text-sm" style={{ color: '#ffff00' }}>Intermediate</span>
+            </div>
+            <div className="flex justify-between items-center pb-2" style={{ borderBottom: '1px solid rgba(0, 255, 0, 0.2)' }}>
+              <span className="font-bold">OSCP (Offensive Security)</span>
+              <span className="text-sm" style={{ color: '#ff0000' }}>Advanced</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="font-bold">CISSP</span>
+              <span className="text-sm" style={{ color: '#ff0000' }}>Professional</span>
+            </div>
           </div>
-          <div className="flex justify-between items-center border-b border-terminal-green/20 pb-2">
-            <span className="font-bold">CompTIA PenTest+</span>
-            <span className="text-terminal-cyan text-sm">Intermediate</span>
-          </div>
-          <div className="flex justify-between items-center border-b border-terminal-green/20 pb-2">
-            <span className="font-bold">CEH (Certified Ethical Hacker)</span>
-            <span className="text-terminal-yellow text-sm">Intermediate</span>
-          </div>
-          <div className="flex justify-between items-center border-b border-terminal-green/20 pb-2">
-            <span className="font-bold">OSCP (Offensive Security)</span>
-            <span className="text-terminal-red text-sm">Advanced</span>
-          </div>
-          <div className="flex justify-between items-center">
-            <span className="font-bold">CISSP</span>
-            <span className="text-terminal-red text-sm">Professional</span>
-          </div>
-        </div>
-      </section>
+        </GlowCard>
+      </ScrollReveal>
     </div>
   )
 }

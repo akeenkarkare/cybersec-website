@@ -1,5 +1,7 @@
 import TypewriterText from '@/components/TypewriterText'
 import GlitchText from '@/components/GlitchText'
+import GlowCard from '@/components/GlowCard'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Home() {
   return (
@@ -28,13 +30,10 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="grid lg:grid-cols-2 gap-8">
-        <div className="space-y-6">
-          <div className="bg-black/70 backdrop-blur-sm rounded-lg transition-all duration-300 relative overflow-hidden" style={{ 
-            padding: '2.5rem',
-            border: '1px solid rgba(0, 255, 0, 0.3)',
-            boxShadow: '0 0 20px rgba(0, 255, 0, 0.2)'
-          }}>
+      <ScrollReveal delay={100}>
+        <section className="grid lg:grid-cols-2 gap-8">
+          <div className="space-y-6">
+            <GlowCard>
             <h3 className="text-xl md:text-2xl font-bold mb-4" style={{ 
               color: '#00ff00',
               textShadow: '0 0 10px rgba(0, 255, 0, 0.5)' 
@@ -42,18 +41,14 @@ export default function Home() {
               [MISSION]
             </h3>
             <p className="text-terminal-green/90 leading-relaxed">
-              we're a new cybersecurity club at stony brook, focused on learning 
+              we're the cybersecurity club at stony brook, focused on learning 
               ethical hacking and digital defense together. whether you're a complete 
               beginner or already know your way around a terminal, you'll fit right in. 
               no gatekeeping, just learning and growing together.
             </p>
-          </div>
+          </GlowCard>
 
-          <div className="bg-black/70 backdrop-blur-sm rounded-lg transition-all duration-300 relative overflow-hidden" style={{ 
-            padding: '2.5rem',
-            border: '1px solid rgba(0, 255, 0, 0.3)',
-            boxShadow: '0 0 20px rgba(0, 255, 0, 0.2)'
-          }}>
+          <GlowCard glowColor="0, 255, 255">
             <h3 className="text-xl md:text-2xl font-bold mb-6" style={{ 
               color: '#00ff00',
               textShadow: '0 0 10px rgba(0, 255, 0, 0.5)' 
@@ -63,7 +58,6 @@ export default function Home() {
             <div className="space-y-6">
               <div className="py-2">
                 <div className="flex items-start mb-2">
-                  <span className="mr-3 text-2xl"></span>
                   <div>
                     <div style={{ color: '#00ffff', fontSize: '16px', fontWeight: 'bold' }}>GBMs: Wednesdays 5-6 PM</div>
                     <div style={{ color: '#00ff00', fontSize: '14px', marginTop: '4px', opacity: 0.8 }}>Location: TBA (check Discord!)</div>
@@ -72,7 +66,6 @@ export default function Home() {
               </div>
               <div className="py-2">
                 <div className="flex items-start">
-                  <span className="mr-3 text-2xl"></span>
                   <div>
                     <div style={{ color: '#00ffff', fontSize: '16px', fontWeight: 'bold' }}>Hacker Hours: Fridays 3-5 PM</div>
                     <div style={{ color: '#00ff00', fontSize: '14px', marginTop: '4px', opacity: 0.8 }}>Location: SAC 309</div>
@@ -80,21 +73,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </GlowCard>
         </div>
 
-      </section>
+        </section>
+      </ScrollReveal>
 
-      <section className="bg-black/70 backdrop-blur-sm rounded-lg relative overflow-hidden transition-all duration-300" style={{ 
-        padding: '2.5rem',
-        border: '2px solid rgba(0, 255, 255, 0.5)',
-        boxShadow: '0 0 30px rgba(0, 255, 255, 0.3)'
-      }}>
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(45deg, rgba(255,0,255,0.05), rgba(0,255,255,0.05), rgba(255,255,0,0.05))',
-          animation: 'gradient 5s ease infinite'
-        }}></div>
-        <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center relative z-10" style={{
+      <ScrollReveal delay={200}>
+        <GlowCard glowColor="0, 255, 255" className="w-full">
+        <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center" style={{
           color: '#00ffff',
           textShadow: '0 0 20px rgba(0, 255, 255, 0.6)'
         }}>
@@ -123,7 +110,8 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+        </GlowCard>
+      </ScrollReveal>
     </div>
   )
 }

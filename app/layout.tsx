@@ -4,6 +4,7 @@ import MatrixRain from '@/components/MatrixRain'
 import Navigation from '@/components/Navigation'
 import ScrollToTop from '@/components/ScrollToTop'
 import PersistentTerminal from '@/components/PersistentTerminal'
+import PageTransition from '@/components/PageTransition'
 
 export const metadata: Metadata = {
   title: 'SBU CyberSec Club | Stony Brook University',
@@ -24,7 +25,9 @@ export default function RootLayout({
         <div className="relative z-10" style={{ paddingBottom: '320px' }}>
           <Navigation />
           <main className="px-4 md:px-6 lg:px-8 py-8">
-            {children}
+            <PageTransition>
+              {children}
+            </PageTransition>
           </main>
         </div>
         <PersistentTerminal />
