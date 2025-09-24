@@ -16,15 +16,15 @@ export default function GlowCard({
   onClick 
 }: GlowCardProps) {
   const [isHovered, setIsHovered] = useState(false)
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+//   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    })
-  }
+//   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+//     const rect = e.currentTarget.getBoundingClientRect()
+//     setMousePos({
+//       x: e.clientX - rect.left,
+//       y: e.clientY - rect.top
+//     })
+//   }
 
   return (
     <div
@@ -32,7 +32,7 @@ export default function GlowCard({
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onMouseMove={handleMouseMove}
+    //   onMouseMove={handleMouseMove}
       style={{
         background: 'rgba(0, 0, 0, 0.7)',
         backdropFilter: 'blur(10px)',
@@ -49,7 +49,7 @@ export default function GlowCard({
       }}
     >
       {/* Glow effect that follows mouse */}
-      {isHovered && (
+      {/* isHovered && (
         <div
           style={{
             position: 'absolute',
@@ -64,7 +64,7 @@ export default function GlowCard({
             zIndex: 0
           }}
         />
-      )}
+      ) */}
       
       {/* Content */}
       <div style={{ position: 'relative', zIndex: 1 }}>
