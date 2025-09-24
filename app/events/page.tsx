@@ -10,10 +10,10 @@ const gbmTopics = [
     subtopics: ["Client-server architecture", "What happens when you type google.com", "HTTP/HTTPS protocols", "DNS routing", "Firewalls"] },
   { topic: "Routers and Switches",
     subtopics: ["OSI Model", "Network protocols", "MAC addresses, IP addresses, and spoofing them", "ARP, Telnet, SSH, FTP, SFTP, HTTP"],
-    files: [] },
+    files: ["/cybersec gbm #2.pdf"] },
   { topic: "Passwords and Authentication",
     subtopics: ["Hashing, Hash-cracking with Collisions", "Salts and Peppers", "Hashing Algorithms: SHA-1,2,3,4,256,512, MD5, Argon2Id, Bcrypt, Scrypt", "How to secure your password!"],
-    files: [] },
+    files: ["/cybersec gbm #3.pdf"] },
   { topic: "Cyber-investigation with Guest Speaker Yalkin Demirkaya!", subtopics: [""]},
   { topic: "AI 💔 Cybersecurity", subtopics: [""]}  
 ]
@@ -139,6 +139,11 @@ export default function Events() {
                         <span className="ml-2" style={{ color: '#00ffff' }}>{subtopic}</span>
                       </div>
                     ))}
+                    <div>
+                      {gbm.files?.map((file, index) =>
+                          <a key={index} href={file}>{`${index > 0 ? ", " : ""}${file.substring(1)}`}</a>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
