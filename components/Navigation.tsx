@@ -42,16 +42,16 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="relative bg-black/95 backdrop-blur-md sticky top-0 z-50 overflow-hidden border-b border-terminal-cyan/20">
+    <nav className="bg-black/95 backdrop-blur-md sticky top-0 z-50 overflow-hidden border-b border-terminal-cyan/20">
       {/* Animated scan line */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-terminal-cyan to-transparent animate-pulse"></div>
+      {/* <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-terminal-cyan to-transparent animate-pulse"></div> */}
       
       {/* Glitch effect overlay */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 animate-pulse" style={{
           background: 'linear-gradient(to right, rgba(168, 85, 247, 0.05), transparent, rgba(0, 255, 255, 0.05))'
         }}></div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-16">
@@ -62,25 +62,23 @@ const Navigation = () => {
                 backgroundColor: 'rgba(0, 255, 255, 0.2)'
               }}></div>
               <div className="relative text-2xl font-bold flex items-center">
-                <span style={{ color: '#00ffff' }}>&lt;</span>
                 <span className="px-1" style={{
                   background: 'linear-gradient(to right, #00ffff, #00ff00, #ffff00)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
                 }}>
-                  {glitchText}
+                  &lt;{glitchText}/&gt;
                 </span>
-                <span style={{ color: '#00ffff' }}>/&gt;</span>
               </div>
             </div>
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
               <span className="text-terminal-green/60 text-xs font-mono">root@seawolf</span>
               <span className="text-terminal-yellow text-xs animate-pulse ml-1">_</span>
-            </div>
+            </div> */}
           </Link>
           
-          <div className="flex items-center space-x-2 md:space-x-4">
+          <div className="flex items-center space-x-2 md:space-x-4 mr-[0.3ex]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -112,7 +110,7 @@ const Navigation = () => {
                         {link.label}
                       </span>
                       <span style={{ color: '#00ffff', fontSize: '12px' }}>]</span>
-                      <span className="animate-pulse ml-1" style={{ color: '#ffff00' }}>●</span>
+                      {/* <span className="animate-pulse ml-1" style={{ color: '#ffff00' }}>●</span> */}
                     </div>
                   ) : (
                     <div className="flex items-center space-x-1 group">
