@@ -148,7 +148,8 @@ export default function PersistentTerminal() {
           <div style={{ 
             flex: 1,
             overflow: 'auto',
-            position: 'relative'
+            position: 'relative',
+			scrollbarColor: '#00ff00 black',
           }}>
             <Terminal />
           </div>

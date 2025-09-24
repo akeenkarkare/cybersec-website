@@ -16,6 +16,7 @@ const Terminal = () => {
   const [isRoot, setIsRoot] = useState(false)
   const [puzzleStage, setPuzzleStage] = useState(0)
   const [foundPassword, setFoundPassword] = useState(false)
+//   const [caretPosition, setCaretPosition] = useState(21.2);
   const inputRef = useRef<HTMLInputElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
@@ -610,7 +611,7 @@ const Terminal = () => {
   return (
     <div 
       ref={terminalRef}
-      className="bg-black/90 backdrop-blur-sm rounded-lg h-full overflow-y-auto border-0"
+      className="bg-black/90 backdrop-blur-sm rounded-lg h-full border-0"
       style={{ padding: '1.5rem' }}
       onClick={() => inputRef.current?.focus()}
     >
@@ -670,7 +671,7 @@ const Terminal = () => {
             ref={inputRef}
             type="text"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={(e) => {setInput(e.target.value); /*setCaretPosition(Math.min(21.29 + e.target.value.length/1.142, 100))*/}}
             onKeyDown={handleKeyDown}
             className="flex-1 bg-transparent outline-none ml-2 font-mono text-base"
             spellCheck={false}
@@ -683,7 +684,10 @@ const Terminal = () => {
               fontFamily: "'JetBrains Mono', 'Fira Code', 'Consolas', monospace"
             }}
           />
-          <span className="animate-cursor-blink">▊</span>
+          {/* <span className="animate-cursor-blink"
+            style={{transform: `translateX(${caretPosition}ch)`}}>
+            ▊
+          </span> */}
         </div>
       </form>
     </div>
