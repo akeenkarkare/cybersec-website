@@ -133,7 +133,7 @@ export default function PersistentTerminal() {
             </span>
             <span 
               style={{ 
-                transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                transform: !isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
                 color: '#00ff00',
                 transition: 'transform 0.3s',
                 fontSize: '16px'
@@ -148,7 +148,8 @@ export default function PersistentTerminal() {
           <div style={{ 
             flex: 1,
             overflow: 'auto',
-            position: 'relative'
+            position: 'relative',
+			scrollbarColor: '#00ff00 black',
           }}>
             <Terminal />
           </div>

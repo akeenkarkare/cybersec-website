@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import GlitchText from '@/components/GlitchText'
 import GlowCard from '@/components/GlowCard'
 import ScrollReveal from '@/components/ScrollReveal'
@@ -22,16 +23,16 @@ export default function About() {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
-          }}>WHO TF ARE WE?</h2>
+          }}>WHO ARE WE?</h2>
           <p className="leading-relaxed" style={{ color: '#00ffff' }}>
-            we're a new group of students passionate about cybersecurity. we believe that understanding
-            how systems can be broken is the first step to making them secure. founded to bring
-            together students interested in ethical hacking and digital defense.
+            we're a group of Stony Brook students passionate about cybersecurity. <br />
+			      we believe that understanding how systems can be broken is the first step to making them secure. <br />
+			      this club was founded to bring together students interested in ethical hacking and digital defense.
           </p>
           <p className="leading-relaxed" style={{ color: '#00ff00' }}>
-            from complete beginners just learning the command line to those already familiar with
-            security concepts, everyone is welcome. we're building a community where we can learn
-            from each other and grow together in the field of cybersecurity.
+            from complete beginners just learning about the command line to those with experience in
+            security, everyone is welcome. <br />
+			      we're building a community where we can learn from each other and grow together in the field of cybersecurity.
           </p>
         </GlowCard>
       </ScrollReveal>
@@ -43,7 +44,7 @@ export default function About() {
             <div className="border-l-4 pl-4 transition-all hover:translate-x-2" style={{ borderColor: '#000000' }}>
               <h3 className="font-bold" style={{ color: '#00ffff' }}>ETHICAL HACKING ONLY</h3>
               <p className="text-sm mt-1" style={{ color: '#ffff00' }}>
-                we hack to learn and protect, not to harm
+                we hack to learn and protect, not to cause damage
               </p>
             </div>
             <div className="border-l-4 pl-4 transition-all hover:translate-x-2" style={{ borderColor: '#000000' }}>
@@ -71,42 +72,46 @@ export default function About() {
       <ScrollReveal delay={300}>
         <GlowCard glowColor="0, 255, 255">
           <h2 className="text-2xl font-bold mb-4" style={{ color: '#00ffff' }}>EXECUTIVE BOARD</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2 rounded-lg transition-all hover:brightness-110" style={{
+          <div className="flex sm:grid-cols-2 sm:gap-6">
+            <div className="space-y-2 flex-1 rounded-lg transition-all hover:brightness-110" style={{
               padding: '1.5rem',
               background: 'linear-gradient(135deg, rgba(255,0,255,0.1), transparent)',
               border: '1px solid rgba(255,0,255,0.3)'
             }}>
               <h3 className="font-bold" style={{ color: '#ff00ff' }}>President</h3>
-              <p style={{ color: '#00ffff' }}>Aanasa Karkare</p>
-              <p className="text-sm" style={{ color: '#ffff00' }}>Computer Engineering and Applied Math, Senior</p>
+              <p style={{ color: '#ff00ff' }}>Aanasa Karkare</p>
+              <Image src="/aanasa.jpg" alt="aanasa!" width={200} height={250} className='rounded-[25%]' />
+              <p className="text-sm" style={{ color: '#ff00ff' }}>Computer Engineering and Applied Math, Senior</p>
             </div>
-            <div className="space-y-2 rounded-lg transition-all hover:brightness-110" style={{
+            <div className="space-y-2 flex-1 rounded-lg transition-all hover:brightness-110" style={{
               padding: '1.5rem',
               background: 'linear-gradient(135deg, rgba(0,255,255,0.1), transparent)',
               border: '1px solid rgba(0,255,255,0.3)'
             }}>
-              <h3 className="font-bold" style={{ color: '#00ffff' }}>ADD ROLE</h3>
-              <p style={{ color: '#ff00ff' }}>ADD NAME</p>
-              <p className="text-sm" style={{ color: '#00ff00' }}>ADD MAJOR, YEAR</p>
+              <h3 className="font-bold" style={{ color: '#00ffff' }}>Vice President</h3>
+              <p style={{ color: '#00ffff' }}>Dakota Levermann</p>
+              <Image src="/dakota.jpg" alt="dakota!" width={200} height={133} className='rounded-[25%]' />
+              <p className="text-sm" style={{ color: '#00ffff' }}>Computer Science, Senior</p>
             </div>
-            <div className="space-y-2 rounded-lg transition-all hover:brightness-110" style={{
+            <div className="space-y-2 flex-1 rounded-lg transition-all hover:brightness-110" style={{
               padding: '1.5rem',
               background: 'linear-gradient(135deg, rgba(255,255,0,0.1), transparent)',
               border: '1px solid rgba(255,255,0,0.3)'
             }}>
-              <h3 className="font-bold" style={{ color: '#ffff00' }}>ADD ROLE</h3>
-              <p style={{ color: '#ff6600' }}>ADD NAME</p>
-              <p className="text-sm" style={{ color: '#00ffff' }}>ADD MAJOR, YEAR</p>
+              <h3 className="font-bold" style={{ color: '#ffff00' }}>Secretary</h3>
+              <p style={{ color: '#ffff00' }}>Kalyani Thayil</p>
+              <Image src="/kalyani.png" alt={"kalyani!"} width={200} height={266} className='rounded-[25%]' />
+              <p className="text-sm" style={{ color: '#ffff00' }}>Computer Science, Senior</p>
             </div>
-            <div className="space-y-2 rounded-lg transition-all hover:brightness-110" style={{
+            <div className="space-y-2 flex-1 rounded-lg transition-all hover:brightness-110" style={{
               padding: '1.5rem',
               background: 'linear-gradient(135deg, rgba(0,255,0,0.1), transparent)',
               border: '1px solid rgba(0,255,0,0.3)'
             }}>
-              <h3 className="font-bold" style={{ color: '#00ff00' }}>ADD ROLE</h3>
-              <p style={{ color: '#ffff00' }}>ADD NAME</p>
-              <p className="text-sm" style={{ color: '#ff00ff' }}>ADD MAJOR, YEAR</p>
+              <h3 className="font-bold" style={{ color: '#00ff00' }}>Treasurer</h3>
+              <p style={{ color: '#00ff00' }}>Felix Gerzon</p>
+              <Image src="/felix.jpg" alt={"felix!"} width={200} height={266} className='rounded-[25%]' />
+              <p className="text-sm" style={{ color: '#00ff00' }}>Computer Science, Sophomore</p>
             </div>
           </div>
         </GlowCard>

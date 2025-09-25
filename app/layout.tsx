@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className="min-h-screen overflow-x-hidden">
         <ScrollToTop />
         <MatrixRain />
-        <div className="scanline"></div>
+        {/* <div className="scanline"></div> */}
         <div className="relative z-10" style={{ paddingBottom: '320px' }}>
           <Navigation />
           <main className="px-4 md:px-6 lg:px-8 py-8">

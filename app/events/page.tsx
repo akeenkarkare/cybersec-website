@@ -6,15 +6,16 @@ import GlowCard from '@/components/GlowCard'
 import ScrollReveal from '@/components/ScrollReveal'
 
 const gbmTopics = [
-  { week: 1, topic: "How the Internet Works", subtopics: ["Client-server architecture", "What happens when you type google.com", "HTTP/HTTPS protocols", "DNS routing", "Packet sniffing basics"] },
-  { week: 2, topic: "TCP/UDP & Networks", subtopics: ["Web sockets and ports", "WiFi vs wired networks", "Open WiFi security risks", "MAC addresses & spoofing", "Telnet, FTP, SFTP"] },
-  { week: 3, topic: "Defense Systems", subtopics: ["Firewalls & antivirus", "Device management & BYOD", "Load balancing", "Wire tapping concerns", "AI in cybersecurity"] },
-  { week: 4, topic: "Privacy & Anonymity", subtopics: ["Digital privacy fundamentals", "Data protection", "Anonymous browsing", "Privacy tools"] },
-  { week: 5, topic: "Physical Security", subtopics: ["Physical ramifications of cybersec", "Cybersecurity in humanoids", "IoT vulnerabilities"] },
-  { week: 6, topic: "Case Studies", subtopics: ["Real-world breaches", "Notable hacks", "Lessons learned"] },
-  { week: 7, topic: "Resources & News", subtopics: ["Hacker News", "Krebs on Security", "404 Media", "Bug bounty platforms"] },
-  { week: 8, topic: "Dark Web & Crypto", subtopics: ["Ransomware tactics", "Blockchain security", "P2P networks", "Cryptocurrency risks"] },
-  { week: 9, topic: "Hands-on Workshops", subtopics: ["XSS attacks", "Pentesting basics", "Cloud security", "SQL injection", "Memory forensics"] },
+  { topic: "How the Internet Works",
+    subtopics: ["Client-server architecture", "What happens when you type google.com", "HTTP/HTTPS protocols", "DNS routing", "Firewalls"] },
+  { topic: "Routers and Switches",
+    subtopics: ["OSI Model", "Network protocols", "MAC addresses, IP addresses, and spoofing them", "ARP, Telnet, SSH, FTP, SFTP, HTTP"],
+    files: ["/cybersec gbm #2.pdf"] },
+  { topic: "Passwords and Authentication",
+    subtopics: ["Hashing, Hash-cracking with Collisions", "Salts and Peppers", "Hashing Algorithms: SHA-1,2,3,4,256,512, MD5, Argon2Id, Bcrypt, Scrypt", "How to secure your password!"],
+    files: ["/cybersec gbm #3.pdf"] },
+  { topic: "Cyber-investigation with Guest Speaker Yalkin Demirkaya!", subtopics: [""]},
+  { topic: "AI 💔 Cybersecurity", subtopics: [""]}  
 ]
 
 export default function Events() {
@@ -54,9 +55,9 @@ export default function Events() {
               <div className="space-y-2">
                 <p style={{ color: '#00ffff' }}>📅 Every Wednesday</p>
                 <p style={{ color: '#ff00ff' }}>⏰ 5:00 PM - 6:00 PM</p>
-                <p style={{ color: '#00ff00' }}>📍 Location: Check Discord!</p>
+                <p style={{ color: '#00ff00' }}>📍 Location: Check Discord, but usually Melville Library N3063!</p>
                 <p className="text-sm mt-3" style={{ color: '#ff6600' }}>
-                  deep dives into hacking, security, and breaking things (legally)
+                  deep dives into security, breaking things (legally), and protecting things
                 </p>
               </div>
             </div>
@@ -71,7 +72,7 @@ export default function Events() {
                 💻 Hacker Hours
               </h3>
               <div className="space-y-2">
-                <p style={{ color: '#ff00ff' }}>📅 Every Friday</p>
+                <p style={{ color: '#ff00ff' }}>📅 Every other Friday</p>
                 <p style={{ color: '#ffff00' }}>⏰ 3:00 PM - 5:00 PM</p>
                 <p style={{ color: '#00ff00' }}>📍 SAC 309</p>
                 <p className="text-sm mt-3" style={{ color: '#00ffff' }}>
@@ -89,55 +90,60 @@ export default function Events() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {gbmTopics.map((gbm) => (
+            {gbmTopics.map((gbm, week) => (
               <div
-                key={gbm.week}
-                onClick={() => setSelectedWeek(selectedWeek === gbm.week ? null : gbm.week)}
+                key={(week + 1)}
+                onClick={() => setSelectedWeek(selectedWeek === (week + 1) ? null : (week + 1))}
                 className="cursor-pointer transition-all duration-300 rounded-lg relative overflow-hidden"
                 style={{
                   padding: '1.5rem',
-                  background: selectedWeek === gbm.week 
+                  background: selectedWeek === (week + 1) 
                     ? 'linear-gradient(135deg, rgba(255,0,255,0.2), rgba(0,255,255,0.2))'
                     : 'rgba(0,0,0,0.5)',
                   border: '2px solid',
-                  borderColor: selectedWeek === gbm.week ? '#ff00ff' : 'rgba(0,255,255,0.3)',
-                  boxShadow: selectedWeek === gbm.week 
+                  borderColor: selectedWeek === (week + 1) ? '#ff00ff' : 'rgba(0,255,255,0.3)',
+                  boxShadow: selectedWeek === (week + 1) 
                     ? '0 0 20px rgba(255, 0, 255, 0.4)' 
                     : '0 0 10px rgba(0, 0, 0, 0.5)',
                   transform: 'translateY(0)',
                   transition: 'all 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  if (selectedWeek !== gbm.week) {
+                  if (selectedWeek !== (week + 1)) {
                     e.currentTarget.style.borderColor = 'rgba(255, 0, 255, 0.6)'
                     e.currentTarget.style.boxShadow = '0 0 15px rgba(255, 0, 255, 0.3)'
                   }
                 }}
                 onMouseLeave={(e) => {
-                  if (selectedWeek !== gbm.week) {
+                  if (selectedWeek !== (week + 1)) {
                     e.currentTarget.style.borderColor = 'rgba(0,255,255,0.3)'
                     e.currentTarget.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'
                   }
                 }}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm" style={{ color: '#ffff00' }}>Week {gbm.week}</span>
-                  <span style={{ color: '#00ffff' }}>{selectedWeek === gbm.week ? '▼' : '▶'}</span>
+                  <span className="text-sm" style={{ color: '#ffff00' }}>Week {(week + 1)}</span>
+                  <span style={{ color: '#00ffff' }}>{selectedWeek === (week + 1) ? '▼' : '▶'}</span>
                 </div>
                 <h4 className="font-bold" style={{ 
-                  color: selectedWeek === gbm.week ? '#ff00ff' : '#00ffff' 
+                  color: selectedWeek === (week + 1) ? '#ff00ff' : '#00ffff' 
                 }}>
                   {gbm.topic}
                 </h4>
                 
-                {selectedWeek === gbm.week && (
+                {selectedWeek === (week + 1) && (
                   <div className="mt-3 space-y-1">
-                    {gbm.subtopics.map((subtopic, idx) => (
+                    {gbm.subtopics.map((subtopic: String, idx) => (
                       <div key={idx} className="text-sm flex items-start">
                         <span style={{ color: '#00ff00' }}>→</span>
                         <span className="ml-2" style={{ color: '#00ffff' }}>{subtopic}</span>
                       </div>
                     ))}
+                    <div>
+                      {gbm.files?.map((file, index) =>
+                          <a key={index} href={file}>{`${index > 0 ? ", " : ""}${file.substring(1)}`}</a>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>

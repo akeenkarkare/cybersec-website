@@ -38,7 +38,7 @@
     filter: drop-shadow(0 0 10px currentColor);
   }
   
-  .scanline {
+  /* .scanline {
     position: fixed;
     top: 0;
     left: 0;
@@ -57,10 +57,10 @@
     100% {
       top: 100%;
     }
-  }
+  } */
   
-  .crt-effect {
-    animation: crt-flicker 0.15s infinite;
+  .crt-effect { /* never used */
+    animation: crt-flicker 5s infinite;
   }
   
   @keyframes crt-flicker {
@@ -127,6 +127,21 @@
     100% {
       opacity: 0.24387;
     }
+  }
+
+  .animate-cursor-blink {
+	animation: blink 2s ease-in-out 0s infinite normal both;
+	position: fixed;
+	transform: translateX(202px);
+  }
+
+  @keyframes blink {
+	0% {
+		opacity: 100%;
+	}
+	70% {
+		opacity: 0%;
+	}
   }
   
   .matrix-bg {
