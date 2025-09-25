@@ -6,27 +6,6 @@ import GlowCard from '@/components/GlowCard'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Message sent! We\'ll get back to you soon.')
-    setFormData({ name: '', email: '', subject: '', message: '' })
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
   return (
     <div className="space-y-8 max-w-5xl mx-auto">
       <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center relative">
@@ -49,8 +28,8 @@ export default function Contact() {
                   <span style={{ color: '#00ffff' }}>📧</span>
                   <div>
                     <div className="font-bold">email (preferred form of official contact)</div>
-                    <a href="mailto:sbucybersecclub@gmail.com" className="text-sm" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-						sbucybersecclub@gmail.com
+                    <a href="mailto:stonybrookcybersecurityclub@stonybrook.edu" className="text-sm" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
+						stonybrookcybersecurityclub@stonybrook.edu
 					</a>
                   </div>
                 </div>
@@ -89,127 +68,6 @@ export default function Contact() {
             </GlowCard>
           </ScrollReveal>
         </section>
-
-        <ScrollReveal delay={200}>
-          <GlowCard glowColor="0, 255, 255">
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>SEND MESSAGE</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block mb-2 text-sm" style={{ color: '#00ff00' }}>NAME</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    border: '1px solid rgba(0, 255, 0, 0.3)',
-                    borderRadius: '4px',
-                    padding: '8px 12px',
-                    color: '#00ff00',
-                    outline: 'none'
-                  }}
-                  placeholder="Enter your name"
-                />
-              </div>
-              
-              <div>
-                <label className="block mb-2 text-sm" style={{ color: '#00ff00' }}>EMAIL</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    border: '1px solid rgba(0, 255, 0, 0.3)',
-                    borderRadius: '4px',
-                    padding: '8px 12px',
-                    color: '#00ff00',
-                    outline: 'none'
-                  }}
-                  placeholder="your.email@stonybrook.edu"
-                />
-              </div>
-              
-              <div>
-                <label className="block mb-2 text-sm" style={{ color: '#00ff00' }}>SUBJECT</label>
-                <select
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    border: '1px solid rgba(0, 255, 0, 0.3)',
-                    borderRadius: '4px',
-                    padding: '8px 12px',
-                    color: '#00ff00',
-                    outline: 'none'
-                  }}
-                >
-                  <option value="">Select a subject</option>
-                  <option value="membership">Membership Inquiry</option>
-                  <option value="workshop">Workshop Question</option>
-                  <option value="ctf">CTF Team</option>
-                  <option value="partnership">Partnership/Sponsorship</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              
-              <div>
-                <label className="block mb-2 text-sm" style={{ color: '#00ff00' }}>MESSAGE</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  style={{
-                    width: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    border: '1px solid rgba(0, 255, 0, 0.3)',
-                    borderRadius: '4px',
-                    padding: '8px 12px',
-                    color: '#00ff00',
-                    outline: 'none',
-                    resize: 'none'
-                  }}
-                  placeholder="Type your message here..."
-                />
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full font-bold transition-all duration-300"
-                style={{
-                  backgroundColor: 'rgba(0, 255, 0, 0.2)',
-                  border: '1px solid #00ff00',
-                  color: '#00ff00',
-                  padding: '8px 16px',
-                  borderRadius: '4px'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(0, 255, 0, 0.3)'
-                  e.currentTarget.style.borderColor = '#00ffff'
-                  e.currentTarget.style.color = '#00ffff'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(0, 255, 0, 0.2)'
-                  e.currentTarget.style.borderColor = '#00ff00'
-                  e.currentTarget.style.color = '#00ff00'
-                }}
-              >
-                [SEND_MESSAGE]
-              </button>
-            </form>
-          </GlowCard>
-        </ScrollReveal>
       </div>
 
       <ScrollReveal delay={250}>
