@@ -27,10 +27,11 @@ export default function Contact() {
                 <div className="flex items-start space-x-3">
                   <span style={{ color: '#00ffff' }}>📧</span>
                   <div>
-                    <div className="font-bold">email (preferred form of official contact)</div>
+                    <div className="font-bold">email (for official contact)</div>
+                    let uni = "stonybrook" <br />
                     <a href="mailto:stonybrookcybersecurityclub@stonybrook.edu" className="text-sm" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-						stonybrookcybersecurityclub@stonybrook.edu
-					</a>
+                      [uni]cybersecurityclub@[uni].edu
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -38,16 +39,6 @@ export default function Contact() {
                   <div>
                     <div className="font-bold">discord (preferred form of unofficial contact)</div>
                     <a className="text-sm" href="discord.gg/8W9NKMe" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>discord.gg/8W9NKMe</a>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <span style={{ color: '#00ffff' }}>📍</span>
-                  <div>
-                    <div className="font-bold">our lair</div>
-                    <div className="text-sm" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                      Melville Library N3063<br />
-                      knock first, we might be hacking the pentagon
-                    </div>
                   </div>
                 </div>
               </div>
@@ -77,8 +68,8 @@ export default function Contact() {
             <div className="border-l-2 transition-all hover:translate-x-2" style={{ borderColor: '#00ff00', paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
               <h3 className="font-bold mb-1" style={{ color: '#00ffff' }}>do i need to be a l33t hacker to join?</h3>
               <p className="text-sm" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                not at all! we all started as noobs who thought "hacking" meant typing really fast. <br />
-                you'll fit right in.
+                not at all! we all strive to learn more. <br />
+                just come with an open mind, you'll fit right in.
               </p>
             </div>
             <div className="border-l-2 transition-all hover:translate-x-2" style={{ borderColor: '#00ff00', paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
@@ -91,8 +82,7 @@ export default function Contact() {
             <div className="border-l-2 transition-all hover:translate-x-2" style={{ borderColor: '#00ff00', paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
               <h3 className="font-bold mb-1" style={{ color: '#00ffff' }}>what gear do i need?</h3>
               <p className="text-sm" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                a laptop that can run chrome without catching fire. that's it. <br />
-                we'll help you install kali and pretend you're mr. robot.
+                we recommend a laptop with that can connect to networks and install programs. that's it. <br />
               </p>
             </div>
             <div className="border-l-2 transition-all hover:translate-x-2" style={{ borderColor: '#00ff00', paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>

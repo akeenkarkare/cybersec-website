@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
+import { meetingData } from '@/app/events/page'
 
 interface Command {
   command: string
@@ -16,7 +17,7 @@ const Terminal = () => {
   const [isRoot, setIsRoot] = useState(false)
   const [puzzleStage, setPuzzleStage] = useState(0)
   const [foundPassword, setFoundPassword] = useState(false)
-//   const [caretPosition, setCaretPosition] = useState(21.2);
+  // const [caretPosition, setCaretPosition] = useState(21.2);
   const inputRef = useRef<HTMLInputElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
@@ -29,7 +30,7 @@ const Terminal = () => {
           <div><span className="text-terminal-yellow">help</span> - Show available commands</div>
           <div><span className="text-terminal-yellow">about</span> - Learn about SBU CyberSec Club</div>
           <div><span className="text-terminal-yellow">events</span> - View upcoming events</div>
-          <div><span className="text-terminal-yellow">ctf</span> - CTF competition information</div>
+          {/* <div><span className="text-terminal-yellow">ctf</span> - CTF competition information</div> */}
           <div><span className="text-terminal-yellow">resources</span> - Learning resources</div>
           <div><span className="text-terminal-yellow">contact</span> - Get in touch</div>
           <div><span className="text-terminal-yellow">clear</span> - Clear terminal</div>
@@ -40,6 +41,7 @@ const Terminal = () => {
           <div><span className="text-terminal-yellow">date</span> - Show current date</div>
           <div><span className="text-terminal-yellow">sudo</span> - Nice try...</div>
           <div><span className="text-terminal-yellow">hack</span> - Become CEO instantly</div>
+          <div><span className="text-terminal-yellow">and more...</span></div>
         </div>
         <div className="mt-3 text-terminal-cyan">💡 Pro tip: Use TAB for autocomplete!</div>
       </div>
@@ -66,43 +68,26 @@ const Terminal = () => {
         <div className="space-y-3">
           <div className="border-l-2 border-terminal-green pl-3">
             <div className="text-terminal-yellow">General Body Meetings</div>
-            <div className="text-sm">Date: Wednesdays 5-6PM</div>
+            <div className="text-sm">Date: {meetingData.gbm.day}s from {meetingData.gbm.time}</div>
             <div className="text-sm">Location: Check Discord for room</div>
             <div className="text-sm text-terminal-cyan">weekly workshops & hacking demos</div>
           </div>
           <div className="border-l-2 border-terminal-green pl-3">
             <div className="text-terminal-yellow">Hacker Hours</div>
-            <div className="text-sm">Date: Fridays 3-5PM</div>
-            <div className="text-sm">Location: SAC 309</div>
+            <div className="text-sm">Date: {meetingData.hacker_hours.day}s from {meetingData.hacker_hours.time}</div>
+            <div className="text-sm">Location: {meetingData.hacker_hours.room}</div>
             <div className="text-sm text-terminal-cyan">work on CTFs and projects together</div>
           </div>
         </div>
       </div>
     ),
-    ctf: () => (
-      <div className="space-y-2">
-        <div className="text-terminal-cyan text-lg font-bold">CTF Team - join us, we're just getting started</div>
-        <div>team name: <span className="text-terminal-yellow">SBU_Seawolves</span></div>
-        <div className="mt-2">
-          <div className="text-terminal-green">what we're working on:</div>
-          <ul className="ml-4 mt-1">
-            <li>• building our skills together</li>
-            <li>• competing in upcoming CTFs</li>
-            <li>• learning from each other</li>
-          </ul>
-        </div>
-        <div className="mt-2">
-          <div>join us fridays @ 6pm - all skill levels welcome!</div>
-        </div>
-      </div>
-    ),
     resources: () => (
       <div className="space-y-2">
-        <div className="text-terminal-cyan text-lg font-bold">resources to go from script kiddie to élite</div>
+        <div className="text-terminal-cyan text-lg font-bold">resources to go from script kiddie to elite</div>
         <div className="space-y-2">
           <div className="text-terminal-yellow">baby's first hack:</div>
           <ul className="ml-4">
-            <li>• OverTheWire (start here or get bullied)</li>
+            <li>• OverTheWire (a nice place to start)</li>
             <li>• PicoCTF (literally made for high schoolers)</li>
             <li>• TryHackMe (hand-holding included)</li>
           </ul>
@@ -116,7 +101,6 @@ const Terminal = () => {
           <ul className="ml-4">
             <li>• OSCP (pain but worth)</li>
             <li>• bug bounties (get that bread)</li>
-            <li>• 0days (jk... unless? 👀)</li>
           </ul>
         </div>
       </div>
@@ -124,11 +108,10 @@ const Terminal = () => {
     contact: () => (
       <div className="space-y-2">
         <div className="text-terminal-cyan text-lg font-bold">slide into our DMs</div>
-        <div>📧 email: cybersec@stonybrook.edu (we check it sometimes)</div>
-        <div>💬 discord: discord.gg/sbucybersec (we're always here)</div>
-        <div>🐦 twitter: @SBUCyberSec (for the memes)</div>
-        <div>📍 irl: CS building 2314 (knock first, we might be hacking)</div>
-        <div>🕐 office hours: whenever we're not in class lol</div>
+        <div>📧 email: <a href="mailto:stonybrookcybersecurityclub@stonybrook.edu" style={{color: 'inherit'}}>stonybrookcybersecurityclub@stonybrook.edu</a> (we check it sometimes)</div>
+        <div>💬 discord: <a href="https://discord.gg/8W9NKMe" style={{color: 'inherit'}} >discord.gg/8W9NKMe</a> (we're always here)</div>
+        <div>📍 irl: check out our events (knock first, we might be hacking)</div>
+        <div>🕐 hacker hours: whenever we're not in class lol</div>
       </div>
     ),
     clear: () => {
@@ -158,7 +141,7 @@ const Terminal = () => {
       </div>
     ) : (
       <span className="text-terminal-red">
-        nice try fed. you're not getting root that easy 😂
+        nice try bud. you're not getting root that easy 😂
       </span>
     ),
     hack: () => (
@@ -195,13 +178,13 @@ const Terminal = () => {
    |      |]
    \\      /
     \`----'`}
-      <div className="mt-2">*brewing some Java for you*</div>
+      <div className="mt-2">*brewed some Java for you*</div>
       </pre>
     ),
     vim: () => (
       <div className="text-terminal-red">
         Error: Unable to exit vim. You're trapped forever.
-        <div className="text-terminal-yellow mt-2">hint: press ESC :q! (jk this isn't real vim)</div>
+        <div className="text-terminal-yellow mt-2">hint: press ESC, then type :q! (jk this isn't real vim)</div>
       </div>
     ),
     emacs: () => (
@@ -229,15 +212,14 @@ const Terminal = () => {
   }, [history])
 
   const handleCommand = (cmd: string) => {
-    const trimmedCmd = cmd.trim()
-    const lowerCmd = trimmedCmd.toLowerCase()
+    const lowerCmd = cmd.trim().toLowerCase()
     const parts = lowerCmd.split(' ')
     const command = parts[0]
     
     let output: string | React.ReactElement = ''
     
     // Hidden commands for puzzle
-    if (lowerCmd === 'ls -la' || lowerCmd === 'ls -a') {
+    if (['ls -la', 'ls -al', 'ls -a'].includes(lowerCmd)) {
       output = (
         <div className="grid grid-cols-3 gap-4">
           <span className="text-gray-600">.</span>
@@ -253,12 +235,8 @@ const Terminal = () => {
       )
       if (puzzleStage === 0) {
         setPuzzleStage(1)
-        output = (
-          <div>
-            {output}
-          </div>
-        )
       }
+      output = <div>{output}</div>
     } else if (command === 'cat' && parts[1] === '.config') {
       output = (
         <div className="space-y-2 font-mono text-sm">
@@ -365,11 +343,11 @@ const Terminal = () => {
               </div>
             )
           } else {
-            output = <div className="text-terminal-red">Permission denied: nice try fed, but you need root access 😂</div>
+            output = <div className="text-terminal-red">Permission denied: nice try bud, but you need root access 😂</div>
           }
           break
         default:
-          output = <span className="text-terminal-red">cat: {filename}: No such file or directory</span>
+          output = <span className="text-terminal-red">cat: {filename}: No such file</span>
       }
     } else if (command === 'cd' && parts.length > 1) {
       const dir = parts[1]
@@ -405,7 +383,7 @@ const Terminal = () => {
           passwd: password updated successfully (not really tho)
         </div>
       )
-    } else if (lowerCmd.includes('ping') && lowerCmd.includes('8.8.8.8')) {
+    } else if (lowerCmd.startsWith('ping') && lowerCmd.includes('8.8.8.8')) {
       output = (
         <div className="font-mono text-sm">
           <div>PING 8.8.8.8: 56 data bytes</div>
@@ -428,13 +406,13 @@ const Terminal = () => {
 \\___)=(___/`}
           </pre>
           <div className="text-sm">
-            <div className="text-terminal-cyan">OS: SBU Linux 4.20.69</div>
+            <div className="text-terminal-cyan">OS: SBU Linux 1.3.3.7</div>
             <div className="text-terminal-yellow">Host: Stony Brook University</div>
             <div className="text-terminal-purple">Kernel: 5.15.0-hacker</div>
-            <div className="text-terminal-green">Uptime: 69 days, 4:20</div>
+            <div className="text-terminal-green">Uptime: -300 days, -3:20</div>
             <div className="text-terminal-red">Shell: /bin/hack</div>
             <div className="text-terminal-cyan">CPU: Intel Core i9-13337K</div>
-            <div className="text-terminal-yellow">Memory: 42069 MB</div>
+            <div className="text-terminal-yellow">Memory: 0 B</div>
           </div>
         </div>
       )
@@ -479,9 +457,9 @@ const Terminal = () => {
       output = (
         <div className="font-mono text-xs">
           <div>PID   USER  %CPU  %MEM  COMMAND</div>
-          <div>1337  root  99.9  66.6  /usr/bin/hack</div>
-          <div>420   user  42.0  13.37 chrome --incognito</div>
-          <div>69    user  6.9   4.20  discord</div>
+          <div>1337  root  1.9   66.6  /usr/bin/hack</div>
+          <div>7331  user  99.9  13.37 chrome --incognito</div>
+          <div>33    user  2.3   90.0  discord</div>
           <div>31337 root  133.7 99.9  bitcoin-miner</div>
           <div className="text-terminal-red mt-2">wait, who's mining bitcoin?? 🤔</div>
         </div>
@@ -522,11 +500,11 @@ const Terminal = () => {
           <div className="text-terminal-yellow">nice try, but we have protection against that</div>
         </div>
       )
-    } else if (command === 'echo' && parts.length > 1) {
-      output = parts.slice(1).join(' ')
+    } else if (lowerCmd === 'echo' && parts.length > 1) {
+      output = cmd.substring(cmd.indexOf(" ") + 1)
     } else if (command in commands) {
       output = commands[command]()
-    } else if (trimmedCmd === '') {
+    } else if (lowerCmd === '') {
       return
     } else {
       output = <span className="text-terminal-red">Command not found: {command}. Type 'help' for available commands.</span>
@@ -631,7 +609,7 @@ const Terminal = () => {
         </pre>
       </div>
       <div className="mb-4">
-        <span style={{ color: '#00ff00' }}>yo welcome to SBU cybersec terminal v4.20.69</span>
+        <span style={{ color: '#00ff00' }}>yo welcome to SBU cybersec terminal v0.00001</span>
         <br />
         type <span style={{ color: '#00ffff' }}>'help'</span> for commands | use <span style={{ color: '#00ffff' }}>TAB</span> to autocomplete
       </div>
@@ -649,11 +627,7 @@ const Terminal = () => {
             </div>
             {item.output && (
               <div className="mt-1 ml-4">
-                {typeof item.output === 'string' ? (
-                  <span>{item.output}</span>
-                ) : (
-                  item.output
-                )}
+                {typeof item.output === 'string' ? <span>{item.output}</span> : item.output}
               </div>
             )}
           </div>

@@ -42,26 +42,26 @@ export default function About() {
           <h2 className="text-2xl font-bold mb-4" style={{ color: '#ff00ff' }}>OUR VALUES</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="border-l-4 pl-4 transition-all hover:translate-x-2" style={{ borderColor: '#000000' }}>
-              <h3 className="font-bold" style={{ color: '#00ffff' }}>ETHICAL HACKING ONLY</h3>
-              <p className="text-sm mt-1" style={{ color: '#ffff00' }}>
+              <h3 className="font-bold" style={{ color: '#00ffff' }}>ETHICS</h3>
+              <p className="text-sm mt-1" style={{ color: '#00ffff' }}>
                 we hack to learn and protect, not to cause damage
               </p>
             </div>
             <div className="border-l-4 pl-4 transition-all hover:translate-x-2" style={{ borderColor: '#000000' }}>
-              <h3 className="font-bold" style={{ color: '#ff00ff' }}>INCLUSIVE COMMUNITY</h3>
-              <p className="text-sm mt-1" style={{ color: '#00ff00' }}>
+              <h3 className="font-bold" style={{ color: '#ff00ff' }}>INCLUSIVITY</h3>
+              <p className="text-sm mt-1" style={{ color: '#ff00ff' }}>
                 all skill levels welcome, we all start somewhere
               </p>
             </div>
             <div className="border-l-4 pl-4 transition-all hover:translate-x-2" style={{ borderColor: '#000000' }}>
-              <h3 className="font-bold" style={{ color: '#ff6600' }}>LEARN BY DOING</h3>
-              <p className="text-sm mt-1" style={{ color: '#00ffff' }}>
+              <h3 className="font-bold" style={{ color: '#ff6600' }}>EXPERIMENTATION</h3>
+              <p className="text-sm mt-1" style={{ color: '#ff6600' }}>
                 hands-on practice beats theory every time
               </p>
             </div>
             <div className="border-l-4 pl-4 transition-all hover:translate-x-2" style={{ borderColor: '#000000' }}>
-              <h3 className="font-bold" style={{ color: '#ffff00' }}>CAREER FOCUSED</h3>
-              <p className="text-sm mt-1" style={{ color: '#ff00ff' }}>
+              <h3 className="font-bold" style={{ color: '#ffff00' }}>LAUNCHING CAREERS</h3>
+              <p className="text-sm mt-1" style={{ color: '#ffff00' }}>
                 building skills for real-world security careers
               </p>
             </div>
@@ -72,7 +72,7 @@ export default function About() {
       <ScrollReveal delay={300}>
         <GlowCard glowColor="0, 255, 255">
           <h2 className="text-2xl font-bold mb-4" style={{ color: '#00ffff' }}>EXECUTIVE BOARD</h2>
-          <div className="flex sm:grid-cols-2 sm:gap-6">
+          <div className="flex sm:grid-cols-2 sm:gap-6 overflow-x-auto">
             <div className="space-y-2 flex-1 rounded-lg transition-all hover:brightness-110" style={{
               padding: '1.5rem',
               background: 'linear-gradient(135deg, rgba(255,0,255,0.1), transparent)',

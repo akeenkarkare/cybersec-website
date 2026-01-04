@@ -1,11 +1,16 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, Dispatch, SetStateAction } from 'react'
 import Terminal from './Terminal'
 
-export default function PersistentTerminal() {
-  const [isOpen, setIsOpen] = useState(true)
-  const [height, setHeight] = useState(300) // Default height
+interface PTermProps {
+	height: number,
+	setHeight: Dispatch<SetStateAction<number>>,
+	isOpen: boolean,
+	setIsOpen: Dispatch<SetStateAction<boolean>>
+}
+
+export default function PersistentTerminal({height, setHeight, isOpen, setIsOpen}: PTermProps) {
   const [isResizing, setIsResizing] = useState(false)
   const startY = useRef(0)
   const startHeight = useRef(0)

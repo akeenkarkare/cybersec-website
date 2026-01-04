@@ -2,6 +2,7 @@ import TypewriterText from '@/components/TypewriterText'
 import GlitchText from '@/components/GlitchText'
 import GlowCard from '@/components/GlowCard'
 import ScrollReveal from '@/components/ScrollReveal'
+import { meetingData } from './events/page'
 
 export default function Home() {
   return (
@@ -53,22 +54,22 @@ export default function Home() {
               color: '#00ff00',
               textShadow: '0 0 10px rgba(0, 255, 0, 0.5)' 
             }}>
-              [WEEKLY MEETUPS]
+              [WEEKLY MEETINGS]
             </h3>
             <div className="space-y-6">
               <div className="py-2">
                 <div className="flex items-start mb-2">
                   <div>
-                    <div style={{ color: '#00ffff', fontSize: '16px', fontWeight: 'bold' }}>GBMs: Wednesdays 5-6 PM</div>
-                    <div style={{ color: '#00ff00', fontSize: '14px', marginTop: '4px', opacity: 0.8 }}>Location: TBA (check Discord!)</div>
+                    <div style={{ color: '#00ffff', fontSize: '16px', fontWeight: 'bold' }}>GBMs: {meetingData.gbm.day}s from {meetingData.gbm.time}</div>
+                    <div style={{ color: '#00ff00', fontSize: '14px', marginTop: '4px', opacity: 0.8 }}>Location: {meetingData.gbm.room} (check Discord to be sure!)</div>
                   </div>
                 </div>
               </div>
               <div className="py-2">
                 <div className="flex items-start">
                   <div>
-                    <div style={{ color: '#00ffff', fontSize: '16px', fontWeight: 'bold' }}>Hacker Hours: Fridays 3-5 PM</div>
-                    <div style={{ color: '#00ff00', fontSize: '14px', marginTop: '4px', opacity: 0.8 }}>Location: SAC 309</div>
+                    <div style={{ color: '#00ffff', fontSize: '16px', fontWeight: 'bold' }}>Hacker Hours: {meetingData.hacker_hours.day}s {meetingData.hacker_hours.time}</div>
+                    <div style={{ color: '#00ff00', fontSize: '14px', marginTop: '4px', opacity: 0.8 }}>Location: {meetingData.hacker_hours.room}</div>
                   </div>
                 </div>
               </div>
@@ -80,12 +81,12 @@ export default function Home() {
       </ScrollReveal>
 
       <ScrollReveal delay={200}>
-        <GlowCard glowColor="0, 255, 255" className="w-full">
+        <GlowCard glowColor="0, 255, 255">
         <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center" style={{
           color: '#00ffff',
           textShadow: '0 0 20px rgba(0, 255, 255, 0.6)'
         }}>
-          [JOIN THE REVOLUTION]
+          [JOIN THE CLUB]
         </h3>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="text-center relative">
