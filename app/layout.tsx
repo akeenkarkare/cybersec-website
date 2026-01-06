@@ -1,6 +1,5 @@
 'use client'
 
-import type { Metadata } from 'next'
 import './globals.css'
 import { useState } from 'react'
 import MatrixRain from '@/components/MatrixRain'
@@ -9,22 +8,22 @@ import ScrollToTop from '@/components/ScrollToTop'
 import PersistentTerminal from '@/components/PersistentTerminal'
 import PageTransition from '@/components/PageTransition'
 
-// export const metadata: Metadata = {
-//   title: 'SBU CyberSec Club | Stony Brook University',
-//   description: 'Official website of Stony Brook University Cybersecurity Club',
-// }
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const [showTerminal, setShowTerminal] = useState(window.innerHeight * 0.8 < window.innerWidth)
+export default function RootLayout({children}: {children: React.ReactNode}) {
+  const [showTerminal, setShowTerminal] = useState(self.innerHeight * 0.8 < self.innerWidth)
   const [isOpen, setIsOpen] = useState(true)
   const [height, setHeight] = useState(300) // Default height
-  window.onresize = () => setShowTerminal(window.innerHeight * 0.8 < window.innerWidth)
+  self.onresize = () => setShowTerminal(window.innerHeight * 0.8 < window.innerWidth)
+
   return (
     <html lang="en">
+      <head>
+        {/* todo: twitter and opengraph */}
+        <title>SBU CyberSec Club | Stony Brook University</title>
+        <meta name="description" content="Official website of Stony Brook University Cybersecurity Club" />
+        <meta name="keywords" content="Stony Brook,Cybersecurity,Club" />
+        <meta name="author" content='Akeen' />
+        <meta name="author" content='Felix' />
+      </head>
       <body className="min-h-screen overflow-x-hidden">
         <ScrollToTop />
         <MatrixRain />
