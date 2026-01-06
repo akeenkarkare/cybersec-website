@@ -1,0 +1,134 @@
+{
+	"meetingData": {
+		"gbm": {
+			"day": "Tuesday",
+			"time": "12pm - 1pm",
+			"room": "SAC 302"
+		},
+		"hacker_hours": {
+			"day": "Friday",
+			"time": "2pm - 4pm",
+			"room": "TBD"
+		}
+	},
+
+	"gbmTopics": [
+		{ "topic": "How the Internet Works",
+			"subtopics": [
+				"Client-server architecture",
+				"What happens when you type google.com",
+				"HTTP/HTTPS protocols",
+				"DNS routing",
+				"Firewalls"
+			]
+		},
+		{ "topic": "Routers and Switches",
+			"subtopics": [
+				"OSI Model",
+				"Network protocols",
+				"MAC addresses",
+				"IP addresses and spoofing them",
+				"ARP, Telnet, SSH, FTP, SFTP, HTTP"
+			],
+			"files": [{"name": "cybersec gbm #2.pdf", "link": "https://drive.google.com/file/d/19uXBF7H0vajz5zRHjB57FVaJHWlqfl_E/view?usp=sharing"}]
+		},
+		{ "topic": "Passwords and Authentication",
+			"subtopics": [
+				"Hashing, Hash-cracking with Collisions",
+				"Salts and Peppers",
+				"Hashing Algorithms: SHA-1,2,3,4,256,512, MD5, Argon2Id, Bcrypt, Scrypt",
+				"How to secure your password!"
+			],
+			"files": [{"name": "cybersec gbm #3.pdf", "link": "https://drive.google.com/file/d/1jD9Nhkqi7GSGdmWdGVNSezV90VthsMEf/view?usp=sharing"}]
+		},
+		{ "topic": "Cyber-investigation with Guest Speaker Yalkin Demirkaya!",
+			"subtopics": [
+				"Cybercrime investigation",
+				"Differences between public and private sector cybersecurity",
+				"Government network forensics tools",
+				"Running an incident response consulting company",
+				"Self-education",
+				"Finding motivation to become the best at what you do"
+			]
+		},
+		{ "topic": "AI 💔 Cybersecurity",
+			"subtopics": [
+				"Neural Networks",
+				"Machine Learning",
+				"LLM's",
+				"Prompt Injection"
+			],
+			"files": [{"name": "cybersec gbm #5.pdf", "link": "https://drive.google.com/file/d/1lUtD68MQvUtwpQ7Ojni3M1nCFAsoZH5d/view?usp=sharing"}]
+		},
+		{ "topic": "APT's and Kimsuky's hack of South Korea",
+			"subtopics": [
+				"Relevant APT's",
+				"MITRE ATT&CK and analyzing modus operandi",
+				"Protonmail doing fishy business",
+				"Analyzing typical leaks",
+				"(Spear)Phishing and attack chain used by Kimsuky"
+			],
+			"files": [{"name": "cybersec gbm #6.pdf", "link": "https://drive.google.com/file/d/1NHJVEj5TTIDlCgZCXj9Mhhj719O-Ofes/view?usp=sharing"}]
+		},
+		{ "topic": "Hardware Debugging and Side Channels",
+			"subtopics": [
+				"Timing-based attacks and cache flushing",
+				"Power analysis",
+				"I/O and debugging interfaces of microcontrollers",
+				"Reading microcontroller data sheets"
+			],
+			"files": [{"name": "cybersec gbm #7.pdf", "link": "https://drive.google.com/file/d/1dx1dKq1EsF2UXgLkcW021lXpPZ0W5iXk/view?usp=sharing"}]
+		},
+		{ "topic": "Life as a CISO with Guest Speaker Matt Nappi",
+			"subtopics": [
+				"Day-to-day operations",
+				"Funny stories of stepping in as Stony Brook's CISO",
+				"Governance and Risk Compliance (GRC)"
+			]
+		},
+		{ "topic": "Mobile Security",
+			"subtopics": [
+				"Cell tower networks",
+				"Mobile switching centers",
+				"Home- and Visitor location registers",
+				"Wireless communication standards",
+				"SMS and the underlying SS7",
+				"Attacks on SIM cards"
+			],
+			"files": [{"name": "cybersec gbm 9.pdf", "link": "https://drive.google.com/file/d/1TK9W6MriSsK36ElSU-_ZqrpK1TSazYcX/view?usp=sharing"}]
+		},
+		{ "topic": "Security Engineering at Apple with Guest Speaker Anna",
+			"subtopics": [
+				"Bug Bounties",
+				"Security considerations of AirTags and mesh networks",
+				"Post Quantum Cryptography (in iMessage)",
+				"Private cloud computing for AI development"
+			],
+			"files": [{"name": "cybersec gbm 10.pdf", "link": "https://drive.google.com/file/d/1fl6_klXjJQhnrq066T2ghNBY7FF56qSm/view?usp=sharing"}]
+		},
+		{ "topic": "Cryptography: Collaboration with the Math Club",
+			"subtopics": [
+				"Groups and Fields",
+				"P vs NP",
+				"6-bit RSA",
+				"Group Law for Elliptic Curve Cryptography"
+			]
+		},
+		{ "topic": "Executables and Reverse Engineering",
+			"subtopics": [
+				"Different types of R.E and the strategies behind them",
+				"Executable file layout and symbol tables",
+				"Decompilers e.g. ADA, Ghidra",
+				"Analyzing assembly with GDB"
+			],
+			"files": [{"name": "cybersec gbm #12.pdf", "link": "https://drive.google.com/file/d/1bDVQEho3enyLMcJynEkPlla6jPTgkJnU/view?usp=sharing"}]
+		},
+		{ "topic": "Network Monitoring and Forensics with Guest Speaker Eric Johnfelt",
+			"subtopics": [
+				"The importance of high-quality software",
+				"The legal side of forensics and working with lawyers",
+				"History of malware"
+			]
+		}
+	]
+}

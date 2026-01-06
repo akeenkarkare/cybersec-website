@@ -4,32 +4,7 @@ import { useState } from 'react'
 import GlitchText from '@/components/GlitchText'
 import GlowCard from '@/components/GlowCard'
 import ScrollReveal from '@/components/ScrollReveal'
-
-const gbmTopics = [
-  { topic: "How the Internet Works",
-    subtopics: ["Client-server architecture", "What happens when you type google.com", "HTTP/HTTPS protocols", "DNS routing", "Firewalls"] },
-  { topic: "Routers and Switches",
-    subtopics: ["OSI Model", "Network protocols", "MAC addresses, IP addresses, and spoofing them", "ARP, Telnet, SSH, FTP, SFTP, HTTP"],
-    files: ["cybersec gbm #2.pdf"] },
-  { topic: "Passwords and Authentication",
-    subtopics: ["Hashing, Hash-cracking with Collisions", "Salts and Peppers", "Hashing Algorithms: SHA-1,2,3,4,256,512, MD5, Argon2Id, Bcrypt, Scrypt", "How to secure your password!"],
-    files: ["cybersec gbm #3.pdf"] },
-  { topic: "Cyber-investigation with Guest Speaker Yalkin Demirkaya!"},
-  { topic: "AI 💔 Cybersecurity", subtopics: ["Neural Networks", "Machine Learning", "LLM's", "Prompt Injection"]}
-]
-
-export const meetingData = {
-  gbm: {
-    day: "Tuesday",
-    time: "12pm - 1pm",
-    room: "SAC 302"
-  },
-  hacker_hours: {
-    day: "Friday",
-    time: "2pm - 4pm",
-    room: "TBD"
-  }
-}
+import { meetingData, gbmTopics } from '../info.json'
 
 export default function Events() {
   const [selectedWeek, setSelectedWeek] = useState(0)
@@ -156,7 +131,7 @@ export default function Events() {
                     ))}
                     <div>
                       {gbm.files?.map((file, index) =>
-                          <a key={index} href={`/${file}`} style={{ color: '#00ffff' }}>{file} </a>
+                          <a key={index} href={file.link} style={{ color: '#00ffff' }}>{file.name} </a>
                       )}
                     </div>
                   </div>

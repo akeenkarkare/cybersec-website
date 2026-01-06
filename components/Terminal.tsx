@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { meetingData } from '@/app/events/page'
+import { meetingData } from '../app/info.json'
 
 interface Command {
   command: string
@@ -644,10 +644,11 @@ const Terminal = () => {
           <input
             ref={inputRef}
             type="text"
+			id="command-line"
             value={input}
             onChange={(e) => {setInput(e.target.value); /*setCaretPosition(Math.min(21.29 + e.target.value.length/1.142, 100))*/}}
             onKeyDown={handleKeyDown}
-            className="flex-1 bg-transparent outline-none ml-2 font-mono text-base"
+            className="flex-1 bg-transparent outline-none ml-2 font-mono text-base border-0 border-b"
             spellCheck={false}
             autoComplete="off"
             style={{ 

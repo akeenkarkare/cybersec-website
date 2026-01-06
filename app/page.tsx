@@ -2,7 +2,7 @@ import TypewriterText from '@/components/TypewriterText'
 import GlitchText from '@/components/GlitchText'
 import GlowCard from '@/components/GlowCard'
 import ScrollReveal from '@/components/ScrollReveal'
-import { meetingData } from './events/page'
+import {meetingData} from './info.json'
 
 export default function Home() {
   return (

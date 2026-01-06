@@ -35,7 +35,7 @@ const Navigation = () => {
 
   const navLinks = [
     { href: '/', label: 'HOME' },
-    { href: '/about', label: 'WHO_TF' },
+    { href: '/about', label: 'WHO' },
     { href: '/events', label: 'EVENTS' },
     { href: '/resources', label: 'LEARN' },
     { href: '/contact', label: 'SLIDE_IN' },
