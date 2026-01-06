@@ -88,7 +88,7 @@ export default function Contact() {
             <div className="border-l-2 transition-all hover:translate-x-2" style={{ borderColor: '#00ff00', paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
               <h3 className="font-bold mb-1" style={{ color: '#00ffff' }}>does this count for credit?</h3>
               <p className="text-sm" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                nah, but it's a great learning and networkinng opportunity!
+                nah, but it's a great learning and networking opportunity!
               </p>
             </div>
           </div>
