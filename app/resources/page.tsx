@@ -131,23 +131,23 @@ export default function Resources() {
           <div className="space-y-3" style={{ color: 'rgba(0, 255, 0, 0.9)' }}>
             <div className="flex justify-between items-center pb-2" style={{ borderBottom: '1px solid rgba(0, 255, 0, 0.2)' }}>
               <span className="font-bold">CompTIA Security+</span>
-              <span className="text-sm" style={{ color: '#00ffff' }}>Entry Level</span>
+              <span className="text-sm" style={{ color: '#33e41b' }}>Entry Level</span>
             </div>
             <div className="flex justify-between items-center pb-2" style={{ borderBottom: '1px solid rgba(0, 255, 0, 0.2)' }}>
               <span className="font-bold">CompTIA PenTest+</span>
-              <span className="text-sm" style={{ color: '#00ffff' }}>Intermediate</span>
+              <span className="text-sm" style={{ color: '#d3e41b' }}>Intermediate</span>
             </div>
             <div className="flex justify-between items-center pb-2" style={{ borderBottom: '1px solid rgba(0, 255, 0, 0.2)' }}>
               <span className="font-bold">CEH (Certified Ethical Hacker)</span>
-              <span className="text-sm" style={{ color: '#ffff00' }}>Intermediate</span>
+              <span className="text-sm" style={{ color: '#d3e41b' }}>Intermediate</span>
             </div>
             <div className="flex justify-between items-center pb-2" style={{ borderBottom: '1px solid rgba(0, 255, 0, 0.2)' }}>
               <span className="font-bold">OSCP (Offensive Security)</span>
-              <span className="text-sm" style={{ color: '#ff0000' }}>Advanced</span>
+              <span className="text-sm" style={{ color: '#e48a1b' }}>Advanced</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="font-bold">CISSP</span>
-              <span className="text-sm" style={{ color: '#ff0000' }}>Professional</span>
+              <span className="text-sm" style={{ color: '#e4361b' }}>Professional</span>
             </div>
           </div>
         </GlowCard>
