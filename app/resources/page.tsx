@@ -24,54 +24,25 @@ export default function Resources() {
               borderColor: 'rgba(0, 255, 0, 0.3)',
               background: 'rgba(0, 0, 0, 0.4)'
             }}>
-              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>CTF Platforms</h3>
+              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>Learning Platforms (in order from least to most advanced)</h3>
               <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                <li>CTFtime.org - Global CTF calendar</li>
-                <li>PicoCTF - Beginner challenges</li>
-                <li>RingZer0 - Various challenge types</li>
-                <li>Root-Me - Progressive challenges</li>
-              </ul>
-            </div>
-            <div className="border rounded transition-all hover:brightness-110 hover:translate-y-[-2px]" style={{
-              padding: '1.5rem',
-              borderColor: 'rgba(0, 255, 0, 0.3)',
-              background: 'rgba(0, 0, 0, 0.4)'
-            }}>
-              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>Vulnerable Apps</h3>
-              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                <li>DVWA - Damn Vulnerable Web App</li>
-                <li>WebGoat - OWASP training</li>
-                <li>Metasploitable - Vulnerable Linux</li>
-                <li>VulnHub - Boot2root VMs</li>
-              </ul>
-            </div>
-            <div className="border rounded transition-all hover:brightness-110 hover:translate-y-[-2px]" style={{
-              padding: '1.5rem',
-              borderColor: 'rgba(0, 255, 0, 0.3)',
-              background: 'rgba(0, 0, 0, 0.4)'
-            }}>
-              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>Online Labs</h3>
-              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                <li>HackTheBox Academy</li>
-                <li>PentesterLab</li>
-                <li>Cybrary</li>
-                <li>SANS Cyber Aces</li>
-              </ul>
-            </div>
-            <div className="border rounded transition-all hover:brightness-110 hover:translate-y-[-2px]" style={{
-              padding: '1.5rem',
-              borderColor: 'rgba(0, 255, 0, 0.3)',
-              background: 'rgba(0, 0, 0, 0.4)'
-            }}>
-              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>Coding Challenges</h3>
-              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                <li>Cryptopals - Crypto challenges</li>
-                <li>Exploit Education - Binary exploitation</li>
-                <li>W3Challs - Various security challenges</li>
-                <li>SmashTheStack - Wargaming</li>
+                <li>TryHackMe - hands-on walkthroughs of how to exploit vulnerabilities and introductions to relevant tools</li>
+                <li>overthewire - security puzzles that involve using the command line</li>
+                <li>PicoCTF - Beginner Capture The Flag challenges</li>
+                <li>HackTheBox - like TryHackMe, but harder :)</li>
+                <li>DWVA (Damn Vulnerable Web App) - an intentionally vulnerable web app that you can run locally and try to break</li>
+                <li>NoStarchPress&gt;Security - high-quality security textbooks
+                  <ul> Anna's Picks:
+                    <li>Cracking Codes with Python - a great intro to Python and basic cryptography</li>
+                    <li>Silence on the Wire - intermediate network security</li>
+                  </ul>
+                </li>
+                <li>CryptoPals - programming-focused cryptography challenges</li>
+                <li>challenges.re - reverse engineering challenges that mostly involve understanding assembly code</li>
               </ul>
             </div>
           </div>
+          <h3>list compiled by anna</h3>
         </GlowCard>
       </ScrollReveal>
 
@@ -88,7 +59,7 @@ export default function Resources() {
 │ Burp Suite      │ Web application testing          │
 │ Wireshark       │ Network protocol analyzer        │
 │ Ghidra          │ Reverse engineering              │
-│ GDB/PEDA        │ Debugging and exploitation       │
+│ GDB/PEDA        │ Debugging                        │
 │ Gobuster        │ Directory/file enumeration       │
 └─────────────────┴──────────────────────────────────┘`}
             </pre>
@@ -97,35 +68,6 @@ export default function Resources() {
       </ScrollReveal>
 
       <ScrollReveal delay={200}>
-        <GlowCard glowColor="255, 0, 255">
-          <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>RELEVANT BOOKS</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-			<p>The cybersecurity landscape changes constantly!</p>
-            <div className="space-y-2">
-              <h3 className="font-bold" style={{ color: '#00ffff' }}>Technical Books</h3>
-              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                <li>📚 The Web Application Hacker's Handbook</li>
-                <li>📚 Hacking: The Art of Exploitation</li>
-                <li>📚 The Shellcoder's Handbook</li>
-                <li>📚 Practical Malware Analysis</li>
-                <li>📚 Applied Cryptography</li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-bold" style={{ color: '#00ffff' }}>Theory & Concepts</h3>
-              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
-                <li>📚 Computer Security: Art and Science</li>
-                <li>📚 Security Engineering by Ross Anderson</li>
-                <li>📚 The Tangled Web</li>
-                <li>📚 Silence on the Wire</li>
-                <li>📚 Cult of the Dead Cow</li>
-              </ul>
-            </div>
-          </div>
-        </GlowCard>
-      </ScrollReveal>
-
-      <ScrollReveal delay={250}>
         <GlowCard glowColor="0, 255, 0">
           <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>CERTIFICATIONS</h2>
           <div className="space-y-3" style={{ color: 'rgba(0, 255, 0, 0.9)' }}>
@@ -153,7 +95,7 @@ export default function Resources() {
         </GlowCard>
       </ScrollReveal>
 
-	  <ScrollReveal delay={300}>
+	  <ScrollReveal delay={250}>
         <GlowCard glowColor="0, 255, 0">
           <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>LEARNING PATHS</h2>
           
