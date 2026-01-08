@@ -12,7 +12,7 @@ export default function ActualPageStructure({children}: {children: React.ReactNo
   const [height, setHeight] = useState(300) // Default height
   window.onresize = () => setShowTerminal(window.innerHeight * 0.8 < window.innerWidth)
 	return (
-    <body className="min-h-screen overflow-x-hidden">
+    <>
       <ScrollToTop />
       <MatrixRain />
       <div className="relative z-10" style={{ paddingBottom: `${showTerminal ? (isOpen ? height + 5 : 40) : 10}px`}}>
@@ -24,6 +24,6 @@ export default function ActualPageStructure({children}: {children: React.ReactNo
         </main>
       </div>
       {showTerminal && <PersistentTerminal isOpen={isOpen} setIsOpen={setIsOpen} height={height} setHeight={setHeight} />}
-	  </body>
+    </>
 	)
 }

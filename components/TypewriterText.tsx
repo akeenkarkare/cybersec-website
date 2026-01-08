@@ -26,9 +26,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({ text, delay = 100, clas
   return (
     <span className={className}>
       {displayedText}
-      {currentIndex < text.length && (
-        <span className="animate-cursor-blink">▊</span>
-      )}
+      {currentIndex < text.length && <span className="animate-cursor-blink">▊</span> }
     </span>
   )
 }

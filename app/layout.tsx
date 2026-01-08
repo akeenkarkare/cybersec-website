@@ -12,9 +12,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <meta name="author" content='Akeen' />
         <meta name="author" content='Felix' />
       </head>
+	  	<body className="min-h-screen overflow-x-hidden">
         <PageStructure>
           {children}
         </PageStructure>
+		  </body>
     </html>
   )
 }
