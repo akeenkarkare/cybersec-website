@@ -53,11 +53,11 @@ const Terminal = () => {
         <div className="mt-2">
           <span className="text-terminal-yellow">what we do:</span>
           <ul className="ml-4 mt-1">
-            <li>• learn cybersecurity fundamentals</li>
-            <li>• practice CTF challenges together</li>
-            <li>• workshops on hacking & defense</li>
-            <li>• build a community of security enthusiasts</li>
-            <li>• prepare for careers in cybersecurity</li>
+            <li>learn cybersecurity fundamentals</li>
+            <li>practice CTF challenges together</li>
+            <li>workshops on hacking & defense</li>
+            <li>build a community of security enthusiasts</li>
+            <li>prepare for careers in cybersecurity</li>
           </ul>
         </div>
       </div>
@@ -236,7 +236,6 @@ const Terminal = () => {
       if (puzzleStage === 0) {
         setPuzzleStage(1)
       }
-      output = <div>{output}</div>
     } else if (command === 'cat' && parts[1] === '.config') {
       output = (
         <div className="space-y-2 font-mono text-sm">
@@ -383,7 +382,7 @@ const Terminal = () => {
           passwd: password updated successfully (not really tho)
         </div>
       )
-    } else if (lowerCmd.startsWith('ping') && lowerCmd.includes('8.8.8.8')) {
+    } else if (command === 'ping' && lowerCmd.includes('8.8.8.8')) {
       output = (
         <div className="font-mono text-sm">
           <div>PING 8.8.8.8: 56 data bytes</div>
@@ -423,7 +422,7 @@ const Terminal = () => {
           <div className="text-sm mt-2">You've unlocked god mode!</div>
         </div>
       )
-    } else if (lowerCmd === 'nmap' || lowerCmd.startsWith('nmap ')) {
+    } else if (command === 'nmap') {
       output = (
         <div className="font-mono text-xs">
           <div className="text-terminal-green">Starting Nmap 7.94...</div>
@@ -500,14 +499,14 @@ const Terminal = () => {
           <div className="text-terminal-yellow">nice try, but we have protection against that</div>
         </div>
       )
-    } else if (lowerCmd === 'echo' && parts.length > 1) {
+    } else if (command === 'echo' && parts.length > 1) {
       output = cmd.substring(cmd.indexOf(" ") + 1)
     } else if (command in commands) {
       output = commands[command]()
     } else if (lowerCmd === '') {
       return
     } else {
-      output = <span className="text-terminal-red">Command not found: {command}. Type 'help' for available commands.</span>
+      output = <span className="text-terminal-red">Command not found: {command.toString()}. Type 'help' for available commands.</span>
     }
     
     setHistory(prev => [...prev, { command: cmd, output }])
@@ -519,6 +518,8 @@ const Terminal = () => {
     e.preventDefault()
     handleCommand(input)
     setInput('')
+	let container = (e.target as HTMLFormElement).parentElement?.parentElement
+	if (container) setInterval(() => container.scroll(0, container.scrollHeight), 0.1)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -634,7 +635,7 @@ const Terminal = () => {
         ))}
       </div>
       
-      <form onSubmit={handleSubmit} className="mt-4">
+      <form onSubmit={e => handleSubmit(e)} className="mt-4">
         <div className="flex items-center space-x-2">
           <span style={{ color: isRoot ? '#ff0000' : '#00ffff' }}>{isRoot ? 'root@' : 'guest@'}</span>
           <span style={{ color: '#ff00ff' }}>sbu-cybersec</span>
@@ -646,7 +647,7 @@ const Terminal = () => {
             type="text"
 			id="command-line"
             value={input}
-            onChange={(e) => {setInput(e.target.value); /*setCaretPosition(Math.min(21.29 + e.target.value.length/1.142, 100))*/}}
+            onChange={e => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             className="flex-1 bg-transparent outline-none ml-2 font-mono text-base border-0 border-b"
             spellCheck={false}
