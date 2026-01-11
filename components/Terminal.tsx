@@ -206,8 +206,8 @@ const Terminal = () => {
   }, [history.length])
 
   useEffect(() => {
-    if (terminalRef.current) {
-      terminalRef.current.scrollTop = terminalRef.current.scrollHeight
+    if (terminalRef.current?.parentElement) {
+      terminalRef.current.parentElement.scrollTop = terminalRef.current.parentElement.scrollHeight
     }
   }, [history])
 
@@ -518,8 +518,6 @@ const Terminal = () => {
     e.preventDefault()
     handleCommand(input)
     setInput('')
-	let container = (e.target as HTMLFormElement).parentElement?.parentElement
-	if (container) setInterval(() => container.scroll(0, container.scrollHeight), 0.1)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
