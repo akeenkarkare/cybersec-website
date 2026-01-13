@@ -15,6 +15,38 @@ export default function Resources() {
         </span>
       </h1>
 
+      <ScrollReveal delay={50}>
+        <GlowCard glowColor='255, 0, 255'>
+          <h2 className="text-2xl font-bold mb-4" style={{ color: '#ff00ff' }}>
+            ONGOING OPPORTUNITIES
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="border rounded transition-all hover:brightness-110 hover:translate-y-[-2px]" style={{
+              padding: '1.5rem',
+              borderColor: 'rgba(0, 255, 0, 0.3)',
+              background: 'rgba(0, 0, 0, 0.4)'
+            }}>
+              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>
+                CompTIA Certification Training
+              </h3>
+              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
+                <li>Our previous president, Anna, is offering an official CompTIA certification course for the Network+ and Security+ exams.</li>
+                <li>It is virtual and self-guided, with 'office hours' meetings on most Fridays at 6pm.</li>
+                <li>For more details, contact Anna at qandanna[at]riseup[dot]net or join the discord and give yourself the certification role.</li>
+              </ul>
+              <h3 className="font-bold mb-2" style={{ color: '#00ffff' }}>
+                Shadowing the SBU DoIT Cybersecurity Team
+              </h3>
+              <ul className="text-sm space-y-1" style={{ color: 'rgba(0, 255, 0, 0.8)' }}>
+                <li>The Stony Brook University Operations Technology Security Team has graciously allowed some students to have a tour of their workplace.</li>
+                <li>You may get to meet the core team members and see everything from the responsibilities of the other branches to the tools they use!</li>
+                <li>For more details, contact Aanasa via discord.</li>
+              </ul>
+            </div>
+          </div>
+        </GlowCard>
+      </ScrollReveal>
+
       <ScrollReveal delay={100}>
         <GlowCard glowColor="0, 255, 255">
           <h2 className="text-2xl font-bold mb-4" style={{ color: '#ffff00' }}>PRACTICE PLATFORMS</h2>
