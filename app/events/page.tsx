@@ -80,64 +80,69 @@ export default function Events() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {gbmTopics.map((gbm, week) => (
-              <div
-                key={(week + 1)}
-                onClick={() => setSelectedWeek(selectedWeek === (week + 1) ? 0 : (week + 1))}
-                className="cursor-pointer transition-all duration-300 rounded-lg relative overflow-hidden"
-                style={{
-                  padding: '1.5rem',
-                  background: selectedWeek === (week + 1) 
-                    ? 'linear-gradient(135deg, rgba(255,0,255,0.2), rgba(0,255,255,0.2))'
-                    : 'rgba(0,0,0,0.5)',
-                  border: '2px solid',
-                  borderColor: selectedWeek === (week + 1) ? '#ff00ff' : 'rgba(0,255,255,0.3)',
-                  boxShadow: selectedWeek === (week + 1)
-                    ? '0 0 20px rgba(255, 0, 255, 0.4)' 
-                    : '0 0 10px rgba(0, 0, 0, 0.5)',
-                  transform: 'translateY(0)',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  if (selectedWeek !== (week + 1)) {
-                    e.currentTarget.style.borderColor = 'rgba(255, 0, 255, 0.6)'
-                    e.currentTarget.style.boxShadow = '0 0 15px rgba(255, 0, 255, 0.3)'
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (selectedWeek !== (week + 1)) {
-                    e.currentTarget.style.borderColor = 'rgba(0,255,255,0.3)'
-                    e.currentTarget.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'
-                  }
-                }}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm" style={{ color: '#ffff00' }}>Week {(week + 1)}</span>
-                  {gbm.subtopics ? <span style={{ color: '#00ffff' }}>{selectedWeek === (week + 1) ? '▼' : '▶'}</span> : <></>}
-                </div>
-                <h4 className="font-bold" style={{ 
-                  color: selectedWeek === (week + 1) ? '#ff00ff' : '#00ffff' 
-                }}>
-                  {gbm.topic}
-                </h4>
-                
-                {selectedWeek === (week + 1) && (
-                  <div className="mt-3 space-y-1">
-                    {gbm.subtopics?.map((subtopic: String, idx) => (
-                      <div key={idx} className="text-sm flex items-start">
-                        <span style={{ color: '#00ff00' }}>→</span>
-                        <span className="ml-2" style={{ color: '#00ffff' }}>{subtopic}</span>
-                      </div>
-                    ))}
-                    <div>
-                      {gbm.files?.map((file, index) =>
-                          <a key={index} href={file.link} style={{ color: '#00ffff' }}>{file.name} </a>
-                      )}
+            {gbmTopics.reverse().map((sem, semId) => (
+              <div>
+                <h2>{((gbmTopics.length - semId) % 2 === 1 ? 'Fall' : 'Spring') + ' ' + (gbmTopics.length - semId + 2024)}</h2>
+                {sem.map((gbm, week) => (
+                  <div
+                    key={(week + 1)}
+                    onClick={() => setSelectedWeek(selectedWeek === (week + 1) ? 0 : (week + 1))}
+                    className="cursor-pointer transition-all duration-300 rounded-lg relative overflow-hidden"
+                    style={{
+                      padding: '1.5rem',
+                      background: selectedWeek === (week + 1) 
+                        ? 'linear-gradient(135deg, rgba(255,0,255,0.2), rgba(0,255,255,0.2))'
+                        : 'rgba(0,0,0,0.5)',
+                      border: '2px solid',
+                      borderColor: selectedWeek === (week + 1) ? '#ff00ff' : 'rgba(0,255,255,0.3)',
+                      boxShadow: selectedWeek === (week + 1)
+                        ? '0 0 20px rgba(255, 0, 255, 0.4)' 
+                        : '0 0 10px rgba(0, 0, 0, 0.5)',
+                      transform: 'translateY(0)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (selectedWeek !== (week + 1)) {
+                        e.currentTarget.style.borderColor = 'rgba(255, 0, 255, 0.6)'
+                        e.currentTarget.style.boxShadow = '0 0 15px rgba(255, 0, 255, 0.3)'
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (selectedWeek !== (week + 1)) {
+                        e.currentTarget.style.borderColor = 'rgba(0,255,255,0.3)'
+                        e.currentTarget.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'
+                      }
+                    }}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm" style={{ color: '#ffff00' }}>Week {(week + 1)}</span>
+                      {gbm.subtopics ? <span style={{ color: '#00ffff' }}>{selectedWeek === (week + 1) ? '▼' : '▶'}</span> : <></>}
                     </div>
-                  </div>
+                    <h4 className="font-bold" style={{ 
+                      color: selectedWeek === (week + 1) ? '#ff00ff' : '#00ffff' 
+                    }}>
+                      {gbm.topic}
+                    </h4>
+                    
+                    {selectedWeek === (week + 1) && (
+                      <div className="mt-3 space-y-1">
+                        {gbm.subtopics?.map((subtopic: String, idx) => (
+                          <div key={idx} className="text-sm flex items-start">
+                            <span style={{ color: '#00ff00' }}>→</span>
+                            <span className="ml-2" style={{ color: '#00ffff' }}>{subtopic}</span>
+                          </div>
+                        ))}
+                        <div>
+                          {gbm.files?.map((file, index) =>
+                              <a key={index} href={file.link} style={{ color: '#00ffff' }}>{file.name} </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>)
                 )}
-              </div>
-            ))}
+              </div>)
+            )}
           </div>
         </GlowCard>
       </ScrollReveal>
